@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>TelaLogin</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+	<div style="height: 100%; position: absolute; width: 100%">
+		<div class="row h-100">
+			<!-- Coluna da esquerda -->
+			<div class="col-3 h-100 bg-secondary" style="height: 100%">
+			</div>
+
+			<!-- Coluna da direita -->
+		  	<div class="col-9 h-100">
+				<div class="container mt-2 text-center col"> 
+                   <div class="row">
+                       <div class="col">
+                           <div class="bg-secondary" style="width: 100%; height: 20em"></div>
+                           <!-- <img class="img-fluid" src="imagem.jpg" style="width: 250px; height: 250px;"> -->
+                       </div>
+                       <div class="col text-start">
+                          <label for="descricao">Descrição (Opcional)</label>
+                          <textarea class="form-control" id="descricao" style="height:90%;"></textarea>
+                       </div>
+                       <div class="col text-start">
+                            <label for="">Donos(as)</label>
+                            <table class="table" style="user-select: none">
+                                <tbody>
+                                    <tr>                        
+                                        <td><img class="rounded-circle" src="imagem.jpg" alt="" width="20px" height="20px"></td>
+                                        <td>Otto</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="rounded-circle" src="imagem.jpg" alt="" width="20px" height="20px"></td>
+                                        <td>Thornton</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="rounded-circle" src="imagem.jpg" alt="" width="20px" height="20px"></td>
+                                        <td>Larry the Bird</td>
+                                        <td>X</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+        
+                       </div>
+                   </div>
+
+                   <div class="row mt-4 text-start">
+                        <label for="exampleFormControlInput1" class="form-label p-0">Nome do pet</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1">
+   
+                    </div>
+                    <div class="row mt-4 text-start">
+                        <label for="exampleFormControlInput1" class="form-label p-0">Gênero</label>
+                        <select class="form-select">
+                            <option selected disabled value="0">--</option>
+                            <option value="M">Macho</option>
+                            <option value="F">Fêmea</option>
+                        </select>
+                    </div>
+                    <div class="row mt-4 text-start">
+                            <label for="exampleFormControlInput1" class="form-label p-0">Raça</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+       
+                        </div>
+                    <div class="row mt-5 text-end">
+                        <div class="col"></div>
+                        <div class="col-4 m-4">
+                            <button type="submit" class="btn btn-primary" style="width: 100%">Adicionar</button>
+                        </div>
+                    </div>
+				</div>
+		  	</div>
+		</div>
+  </div>
+
+</body>
+</html>
