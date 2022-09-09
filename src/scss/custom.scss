@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+
+$font-family-base: "Noto Sans SC";
+
+$primary: #05668D;
+$secondary: #696D7D;
+$danger:    #b92d2d;
+$light:     #f8f8f8;
+
+@import "../node_modules/bootstrap/scss/bootstrap";

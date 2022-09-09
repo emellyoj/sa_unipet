@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>TelaLogin</title>
+	<link href="../css/custom.min.css" rel="stylesheet">
+</head>
+<body style="overflow-x: hidden; height: 100vh" class="bg-light">
+    <div class="row" style="height: 100%">
+        <!-- Coluna da esquerda -->
+        <div class="col-3 bg-secondary" style="height: 100wh">
+            
+        </div>
+
+        <!-- Coluna da direita -->
+        <div class="col-9 ">
+            <h1 class="text-center mt-1">Agenda</h1>
+            <div class="row mt-3 container">
+                <div class="col-7">
+                    <img class="img-fluid" src="../img/calendar.jpg" alt="" width="100%">
+                </div>
+                <div class="col-5">
+                        <label for="exampleFormControlInput1" class="form-label p-0">Tipo de consulta</label>
+                        <select class="form-select">
+                            <option selected disabled value="0">--</option>
+                            <option value="VET">Veterinaria</option>
+                            <option value="VAC">Vacina</option>
+                        </select>
+                        <label for="exampleFormControlInput1" class="form-label p-0 mt-3">Pets</label>
+                        <select class="form-select">
+                            <option selected disabled value="0">--</option>
+                        </select>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary" style="width: 100%">Adicionar</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="mt-2">Consultas próximas</h3>
+                <div class="col-4 border border-secondary m-3">
+                    
+                </div>
+                <div class="col-3 p-3">
+                    <div class="row mt-5 text-start ">
+                        <button type="submit" class="btn btn-danger mt-5" style="width: 100%">Emergencia</button>
+                        <button type="submit" class="btn btn-primary mt-4" style="width: 100%">Agendar Consulta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
