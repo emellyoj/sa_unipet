@@ -6,17 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Agenda</title>
 	<link rel="stylesheet" href="../css/custom.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body style="overflow-x: hidden; width: 100vw;">
-	<div style="height: 100%; position: absolute; width: 100%">
-		<div class="row h-100">
+	<div style="height: 100vh; position: absolute; width: 100%">
+		<div class="row">
             <!-- Coluna da esquerda -->
-			<div class="col-3 h-100 bg-secondary" style="height: 100%">
+			<div class="col-3 bg-secondary" style="height: 100vh">
 			</div>
 
 			<!-- Coluna da direita -->
-		  	<div class="col-9 h-100 container mt-4">
-                <div class="row">
+		  	<div class="col-9 h-100 container">
+                  <h1 class="h1 text-center mt-2 font-weight-bold">Agenda</h1>
+                <div class="row mx-3 mt-4">
                     <div class="col-7">
                         <img class="img-fluid" src="../img/calendar.jpg" alt="" width="100%">
                     </div>
@@ -31,9 +33,18 @@
                             <select class="form-select">
                                 <option selected disabled value="0">--</option>
                             </select>
-                            <div class="row mt-5">
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary" style="width: 100%">Adicionar</button>
+                            <div class="row mt-5 gx-1 align-items-center">
+                                <div class="col-10">
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        Filtrar
+                                    </button>
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-secondary w-100 d-inline-flex align-items-center justify-content-center">
+                                        <span class="material-icons p-0">
+                                            highlight_off
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                     </div>
@@ -53,6 +64,5 @@
 		  	</div>
 		</div>
   </div>
-
 </body>
 </html>
