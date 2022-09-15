@@ -1,44 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Agendar Consulta</title>
-	<link rel="stylesheet" href="../css/custom.min.css">
-</head>
-<body style="overflow-x: hidden; width: 100vw;">
-	<div style="height: 100vh; position: absolute; width: 100%">
-		<div class="row h-100">
-			<div class="col-3 bg-secondary" style="height: 100vh">
-			</div>
 
-			<!-- Coluna da direita -->
-		  	<div class="col-9 container mt-4">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agendar Consulta</title>
+    <link rel="stylesheet" href="../css/custom.min.css">
+    <script src="../js/escolhahora.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body style="overflow-x: hidden; width: 100vw;">
+    <div style="position: absolute; width: 100%;">
+        <div class="row">
+            <div class="col-3 bg-secondary">
+            </div>
+
+            <!-- Coluna da direita -->
+            <div class="col-9 container mt-4">
+                <h1 class="h1 text-center mt-2 font-weight-bold">Agendar Consulta</h1>
                 <div class="row">
-                    <div class="col-0">
-                    </div>
                     <div class="col-12 p-5">
                         <label class="form-label" for="confirmarsenha">Para qual pet deseja agendar a consulta?</label>
-                            <select class="form-select">
+                        <select class="form-select">
                             <option selected disabled value="0">--</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
-                          </select>
-                          <label class="form-label mt-4" for="confirmarsenha">Qual médico realizará o atendimento?</label>
-                            <select class="form-select">
-                            <option selected disabled value="0">--</option>
+                        </select>
+                        <label class="form-label mt-4" for="confirmarsenha">Qual médico realizará o atendimento?</label>
+                        <select class="form-select">
+                            <option selected value="0">--</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
-                          </select>
+                        </select>
+                        <div class="form-text">Caso não selecione nenhum médico, um médico com agenda disponível
+                            realizará o
+                            atendimento</div>
+
+                        <p class="mb-0 mt-3 font-weight-bold">Recomendados</p>
+                        <div class="row g-4 ">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="../img/imagem.jpg" class="card-img-top" alt="..." style="height: 10rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{Nome do médico}</h5>
+                                        <div class="card-text row row-cols-5 g-2 w-50">
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        Consultado recentemente
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="../img/imagem.jpg" class="card-img-top" alt="..." style="height: 10rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{Nome do médico}</h5>
+                                        <div class="card-text row row-cols-5 g-2 w-50">
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        Consultado recentemente
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="../img/imagem.jpg" class="card-img-top" alt="..." style="height: 10rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{Nome do médico}</h5>
+                                        <div class="card-text row row-cols-5 g-2 w-50">
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        Avaliação alta
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="../img/imagem.jpg" class="card-img-top" alt="..." style="height: 10rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{Nome do médico}</h5>
+                                        <div class="card-text row row-cols-5 g-2 w-50">
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                            <span class="material-icons text-secondary"> star_border </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        Agenda livre
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-7">
+                                <label class="form-label" for="confirmarsenha">Para qual pet deseja agendar a
+                                    consulta?</label>
+                                <input class="form-control" type="date" name="" id="">
+                            </div>
+                        </div>
+                        <div class="col-8 mt-3">
+                            <p style="font-size: .8em;" class="mb-0">Horários disponíveis para {Nome do médico}</p>
+                            <div class="row row-cols-5 g-3">
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">10:40</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">11:00</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">12:00</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">13:00</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">14:20</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">15:00</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">16:00</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                        onclick="changeSelected(this);">16:20</button></div>
+                            </div>
+                        </div>
+                        <div class="row mt-5 text-end">
+                            <div class="col"></div>
+                            <div class="col-4 m-4">
+                                <button type="submit" class="btn btn-primary" style="width: 100%">Agendar
+                                    Consulta</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-		  	</div>
-		</div>
-  </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 
 </body>
+
 </html>
