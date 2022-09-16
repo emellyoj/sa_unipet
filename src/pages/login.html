@@ -7,12 +7,12 @@
 	<title>Login</title>
 	<link rel="stylesheet" href="../css/custom.min.css">
 </head>
-<body style="overflow-x: hidden; ">
-	<div style="height: 100%; position: absolute; width: 100%">
+<body style="overflow: hidden; ">
+	<div style="height: 100vh; position: absolute; width: 100%">
 		<div class="row h-100">
 			<!-- Coluna da esquerda -->
-			<div class="col-7 h-100" style="height: 100vh">
-				<img class="img-fluid" src="../img/imagem.jpg" alt="">
+			<div class="col-7 d-xs-hidden h-100" style="height: 100vh">
+				<img class="img-fluid" src="../img/imagem.jpg" style="width: 100%">
 			</div>
 
 			<!-- Coluna da direita -->
@@ -20,12 +20,12 @@
 				<div class="container mt-5 text-center"> 
 
 					<!-- Conteúdo da coluna da direita -->
-					<div class="col">
+					<div class="col p-5">
 						<!-- Logo (Inserir futuramente) -->
 						<img class="img-fluid" src="../img/imagem.jpg" alt="" width="100px" height="90px">
 
 						<!-- Formulário de login -->
-						<form class="text-start p-5" >
+						<form class="text-start" >
 							<div>
 								<label class="form-label" for="email">E-mail ou usuário</label>
 								<input type="text" id="email" class="form-control">
