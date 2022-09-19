@@ -2,9 +2,19 @@
 
 $font-family-base: "Reem Kufi";
 
-$primary: #05668D;
-$secondary: #696D7D;
+// $primary:   #7c6a0a;
+// $secondary: #babd8d;
+// $danger:    #eb6424;
+// $light:     #f8f8f8;
+
+$primary:   #15616D;
+$secondary: #7b9e89;
 $danger:    #b92d2d;
 $light:     #f8f8f8;
+     
 
+// $primary: #05668D;
+// $secondary: #696D7D;
+// $danger:    #b92d2d;
+// $light:     #f8f8f8;
 @import "../../node_modules/bootstrap/scss/bootstrap";
