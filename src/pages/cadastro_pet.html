@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Cadastro de Pet</title>
-	<link rel="stylesheet" href="../css/custom.min.css">
+    <link rel="stylesheet" href="../css/custom.min.css">
 </head>
 <body style="overflow-x: hidden; ">
 	<div style="height: 100%; position: absolute; width: 100%">
@@ -23,7 +23,7 @@
                        </div>
                        <div class="col text-start">
                           <label for="descricao">Descrição (Opcional)</label>
-                          <textarea class="form-control" id="descricao" style="height:90%;"></textarea>
+                          <textarea class="form-control" id="descricao" style="height:90%; resize: none"></textarea>
                        </div>
                        <div class="col text-start">
                             <label for="">Donos(as)</label>
@@ -46,16 +46,24 @@
                                     </tr>
                                 </tbody>
                             </table>
+                                    <div class="row p-0 text-end">
+                                        <div class="col"></div>
+                                        <div class="col-5">
+                                            <button type="submit" class="btn btn-primary">
+                                                Adicionar dono
+                                            </button>
+                                        </div>
+                                    </div>
         
                        </div>
                    </div>
 
-                   <div class="row mt-4 text-start">
+                   <div class="container row mt-4 text-start">
                         <label for="exampleFormControlInput1" class="form-label p-0">Nome do pet</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1">
    
                     </div>
-                    <div class="row mt-4 text-start">
+                    <div class="container row mt-4 text-start">
                         <label for="exampleFormControlInput1" class="form-label p-0">Gênero</label>
                         <select class="form-select">
                             <option selected disabled value="0">--</option>
@@ -63,7 +71,7 @@
                             <option value="F">Fêmea</option>
                         </select>
                     </div>
-                    <div class="row mt-4 text-start">
+                    <div class="container row mt-4 text-start">
                             <label for="exampleFormControlInput1" class="form-label p-0">Raça</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1">
        
