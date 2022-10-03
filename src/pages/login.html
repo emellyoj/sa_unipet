@@ -25,15 +25,15 @@
 						<img class="img-fluid" src="../img/imagem.jpg" alt="" width="100px" height="90px">
 
 						<!-- Formulário de login -->
-						<form class="text-start" >
+						<form action="../../backend/login.php" method="POST" class="text-start">
 							<div>
 								<label class="form-label" for="email">E-mail ou usuário</label>
-								<input type="text" id="email" class="form-control">
+								<input type="text" id="email" name="entrada" class="form-control">
 							</div>
 
 							<div class="mt-4">
 								<label class="form-label" for="senha">Senha</label>
-								<input type="password" id="senha" class="form-control">
+								<input type="password" id="senha" name="senha" class="form-control">
 							</div>
 
 							<div class="mt-4 text-end">
