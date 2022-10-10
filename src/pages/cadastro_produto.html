@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="../css/custom.min.css">
+</head>
+
+<body style="overflow: hidden; width: 100vw;">
+    <div style="position: absolute; width: 100%;">
+        <div class="row">
+            <div class="col-3 bg-secondary p-4" style="height: 100vh;overflow: hidden">
+                <h1 class="h1 text-light">UniPet</h1>
+                <hr class="hr text-light">
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
+                        onclick="window.location='../pages/pet_shop.html'" value="Pet Shop" /></div>
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
+                        onclick="window.location='../pages/agenda_pet.html'" value="Agenda" /></div>
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
+                        value="Meus Pets" /></div>
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
+                        value="Consultas" /></div>
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
+                        value="Vacinas" /></div>
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
+                        onclick="window.location='../pages/perfil_usuario.html'" value="Meu Perfil" /></div>
+                <hr class="hr text-light">
+                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start active" style="border:none"
+                        value="Adicionar produto" /></div>
+            </div>
+
+            <!-- Coluna da direita -->
+            <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
+                <h1 class="h1 text-center mt-2 font-weight-bold">Cadastrar produto</h1>
+                <form class="text-start p-5" method="POST" action="/sa_unipet/backend/cadastro_produto.php">
+                    <div>
+                        <label class="form-label" for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-control">
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label" for="preco">Preço</label>
+                        <input type="number" step="0.01" min="0" id="preco" name="preco" class="form-control">
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label" for="quant_estoque">Quantidade em estoque</label>
+                        <input type="number" min="0" id="quant_estoque" name="quant_estoque" class="form-control">
+                    </div>
+
+                    <div class="mt-3">
+                        <input class="form-check-input" id="disponivel" name="disponivel" type="checkbox" value="1" checked>
+                        <label for="disponivel"class="form-label ms-2">Disponivel para venda</label>
+                    </div>
+                    
+                    <div class="mt-3 text-end">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    </div>
+                </form>
+
+
+            </div>
+
+</body>
+
+</html>
