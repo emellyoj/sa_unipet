@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Perfil</title>
     <link rel="stylesheet" href="../css/custom.min.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
     <script src="../js/verCidadesPorEstado.js"></script>
     <script src="../js/verInformacoesDoCep.js"></script>
 </head>
@@ -15,19 +16,14 @@
     <div style="height: 100%; position: absolute; width: 100%">
         <div class="row h-100">
             <!-- Coluna da esquerda -->
-            <div class="col-3 h-100 bg-secondary p-4" style="height: 100vh">
-                    <h1 class="h1 text-light">UniPet</h1>
-                    <hr class="hr text-light">
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" onclick="window.location='../pages/pet_shop.html'" value="Pet Shop"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" onclick="window.location='../pages/agenda_pet.html'"value="Agenda"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Meus Pets"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Consultas"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Vacinas"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start active" style="border:none" onclick="window.location='../pages/perfil_usuario.html'" value="Meu Perfil"/></div>
-            </div>
+            <?php 
+                include('_sidebar.php');
+                mainSideBar('meu_perfil'); 
+            ?>
 
             <!-- Coluna da direita -->
-            <div class="col-9 h-100">
+            <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
+                <h1 class="h1 text-center mt-2 font-weight-bold">Informações Pessoais</h1>
                 <div class="container mt-2 text-center col">
 
                     <!-- Formulário de cadastro -->

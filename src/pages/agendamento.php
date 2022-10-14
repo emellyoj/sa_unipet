@@ -9,21 +9,17 @@
     <link rel="stylesheet" href="../css/custom.min.css">
     <script src="../js/escolhahora.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 
 <body style="overflow-x: hidden; width: 100vw;">
-    <div style="position: absolute; width: 100%;">
+    <div style="position: absolute; width: 100%; height:100%;">
         <div class="row">
-            <div class="col-3 bg-secondary">
-                    <h1 class="h1 text-light">UniPet</h1>
-                    <hr class="hr text-light">
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Pet Shop"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Agenda"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Meus Pets"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Consultas"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Vacinas"/></div>
-                    <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Meu Perfil"/></div>
-            </div>
+            <!-- Coluna da esquerda -->
+            <?php 
+                include('_sidebar.php');
+                mainSideBar('agenda'); 
+            ?>
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4">

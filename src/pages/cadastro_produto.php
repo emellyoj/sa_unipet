@@ -7,30 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastrar Produto</title>
     <link rel="stylesheet" href="../css/custom.min.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 
 <body style="overflow: hidden; width: 100vw;">
     <div style="position: absolute; width: 100%;">
         <div class="row">
-            <div class="col-3 bg-secondary p-4" style="height: 100vh;overflow: hidden">
-                <h1 class="h1 text-light">UniPet</h1>
-                <hr class="hr text-light">
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/pet_shop.html'" value="Pet Shop" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/agenda_pet.html'" value="Agenda" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        value="Meus Pets" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        value="Consultas" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        value="Vacinas" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/perfil_usuario.html'" value="Meu Perfil" /></div>
-                <hr class="hr text-light">
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start active" style="border:none"
-                        value="Adicionar produto" /></div>
-            </div>
+            <!-- Coluna da esquerda -->
+            <?php 
+                include('_sidebar.php');
+                petshopSideBar('cadastro_produto', true); 
+            ?>
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
