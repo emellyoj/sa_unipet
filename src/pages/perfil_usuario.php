@@ -25,7 +25,6 @@
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
                 <h1 class="h1 text-center mt-2 font-weight-bold">Informações Pessoais</h1>
                 <div class="container mt-2 text-center col">
-
                     <!-- Formulário de cadastro -->
                     <form class="text-start p-5">
                         <div class="mt-3 row">
