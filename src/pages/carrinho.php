@@ -11,27 +11,14 @@
 </head>
 
 <body style="overflow: hidden; width: 100vw;">
-    <div style="position: absolute; width: 100%;">
-        <div class="row">
-            <div class="col-3 bg-secondary p-4" style="height: 100vh;overflow: hidden">
-                <h1 class="h1 text-light">UniPet</h1>
-                <hr class="hr text-light">
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/pet_shop.html'" value="Pet Shop" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/agenda_pet.html'" value="Agenda" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        value="Meus Pets" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        value="Consultas" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        value="Vacinas" /></div>
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/perfil_usuario.html'" value="Meu Perfil" /></div>
-                <hr class="hr text-light">
-                <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none"
-                        onclick="window.location='../pages/cadastro_produto.html'" value="Adicionar produto" /></div>
-            </div>
+    <div style="position: absolute; width: 100%; height: 100vh;">
+        <div class="row h-100">
+            
+            <?php
+            // include('../../backend/verifiy_logged_user.php'); 
+            include('_sidebar.php');
+            petshopSideBar('carrinho', true);
+            ?>
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
@@ -79,6 +66,9 @@
                     </div>
                     <div class="row mt-5 text-end">
                         <div class="col"></div>
+                         <div class="col-2 d-flex align-items-center justify-content-end">
+                            <h5 class="h5 m-0 col">Valor total: <span>---</span></h5>  
+                        </div>
                         <div class="col-4 p-0">
                             <button type="submit" class="btn btn-primary" style="width: 100%">Finalizar compra</button>
                         </div>
