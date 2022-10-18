@@ -17,6 +17,7 @@
         <div class="row">
             <!-- Coluna da esquerda -->
             <?php 
+                include('../../backend/verifiy_logged_user.php');
                 include('_sidebar.php');
                 mainSideBar('agenda'); 
             ?>

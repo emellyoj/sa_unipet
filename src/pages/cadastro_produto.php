@@ -39,13 +39,13 @@
                     </div>
 
                     <div class="mt-3">
-                        <input class="form-check-input" id="disponivel" name="disponivel" type="checkbox" value="1" checked>
-                        <label for="disponivel"class="form-label ms-1">Disponivel para venda</label>
-                    </div>
-
-                    <div class="mt-3">
                         <label class="form-label" for="imagem">Inserir imagem</label>
                         <input type="file" id="imagem" name="imagem" class="form-control" accept="image/*">
+                    </div>
+                    
+                    <div class="mt-3">
+                        <input class="form-check-input" id="disponivel" name="disponivel" type="checkbox" value="1" checked>
+                        <label for="disponivel"class="form-label ms-1">Disponivel para venda</label>
                     </div>
                     
                     <div class="mt-3 text-end">

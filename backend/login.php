@@ -10,8 +10,7 @@ $comando->bindValue(":entrada",$entrada);
 
 $comando->execute();
 
-if ($comando->rowCount() == 1)
-{
+if ($comando->rowCount() == 1){
     $resultado = $comando->fetch();
     if($resultado['senha_usuario'] == MD5($set_senha)){
         header("location:/sa_unipet/src/pages/perfil_usuario.html");
@@ -26,10 +25,9 @@ if ($comando->rowCount() == 1)
         echo("Email ou senha incorreto!");
     }
 }
-        else {
-            echo("Email ou senha incorreto!");
-        }
+else {
+    echo("Email ou senha incorreto!");
+}
 
-        unset($comando);
-        unset($pdo);
-?>
+unset($comando);
+unset($pdo);
