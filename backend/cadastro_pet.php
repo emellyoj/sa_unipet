@@ -13,6 +13,16 @@
  
     $comando->execute();                               
 
+    $pet_id=$pdo->lastInsertId();
+
+    $comando = $pdo -> prepare("INSERT INTO usuario_pet(FK_PET,FK_USUARIO VALUES(:fk_pet,:fk_usuario");
+
+    session_start();
+    $comando->bindValue(':fk_pet',$pet_id);
+    $comando->bindValue(':fk_usuario',$_SESSION['pk_usuario']);
+
+    $comando->execute();
+    
     header("Location:/sa_unipet/src/pages/agenda_pet.html");
 
 ?>

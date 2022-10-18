@@ -12,18 +12,14 @@
 
 <body style="overflow-x: hidden;">
     <div style="height: 100%; position: absolute; width: 100%">
-            <h1 class="h1 text-light">UniPet</h1>
-            <hr class="hr text-light">
-            <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Pet Shop"/></div>
-            <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Agenda"/></div>
-            <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Meus Pets"/></div>
-            <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Consultas"/></div>
-            <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Vacinas"/></div>
-            <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start" style="border:none" value="Meu Perfil"/></div>
+           
         <div class="row h-100">
             <!-- Coluna da esquerda -->
-            <div class="col-md-3 d-none d-lg-block h-100 bg-secondary" style="height: 100vh">
-            </div>
+            <?php
+            include('../../backend/verifiy_logged_user.php'); 
+            include('_sidebar.php');
+            mainSideBar('meus_pets'); 
+            ?>
 
             <!-- Coluna da direita -->
             <div class="col-lg-9 col-md-12 h-100">
