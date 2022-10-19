@@ -16,7 +16,14 @@
         $comando->bindValue(":senha",$senha);    
         $comando->execute();                               
     
-        header("Location:/sa_unipet/src/pages/perfil_usuario.html");    
+        $id_usuario = $pdo -> lastInsertId();
+
+        session_start();
+        $_SESSION['id_usuario'] = $resultado['id_usuario'];
+        $_SESSION['fk_tipousuario'] = 1;
+        $_SESSION['loggedin'] = true;
+
+        header("Location:/sa_unipet/src/pages/perfil_usuario.php");    
     }
     
 ?>
