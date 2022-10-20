@@ -37,7 +37,11 @@
 							</div>
 
 							<div class="mt-4 text-end">
-								<input type="submit" class="btn btn-primary">
+								<input type="submit" class="btn btn-primary" value="Entrar">
+							</div>
+
+							<div class="mt-3 text-end">
+								<a href="cadastro.php" class="text-decoration-none">Ainda não tem uma conta? Cadastre-se</a>
 							</div>
 						</form>  
 

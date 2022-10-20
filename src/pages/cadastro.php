@@ -25,7 +25,7 @@
 					<div class="col">
 
 						<!-- Formulário de cadastro -->
-						<form class="text-start p-5" method="POST" action="/sa_unipet/backend/cadastrar.php">
+						<form class="text-start p-5" method="POST" action="/sa_unipet/backend/cadastro_usuario.php">
 							<div class="mt-3">
 								<label class="form-label" for="nomecompleto">Nome completo</label>
 								<input type="text" id="nomecompleto" name="nomecompleto" class="form-control">
@@ -52,7 +52,11 @@
 							</div>
 
 							<div class="mt-3 text-end">
-								<input type="submit" class="btn btn-primary">
+								<input type="submit" class="btn btn-primary" value="Cadastrar">
+							</div>
+
+							<div class="mt-3 text-end">
+								<a href="login.php" class="text-decoration-none">Já possui uma conta? Entrar</a>
 							</div>
 						</form>
 
