@@ -11,18 +11,20 @@
     $comando->bindValue(":genero_pet",$genero_pet);  
     $comando->bindValue(":raca_pet",$raca_pet);                                     
  
-    $comando->execute();                               
-
+    $comando->execute();  
+    
     $pet_id=$pdo->lastInsertId();
+    unset($comando);                           
 
-    $comando = $pdo -> prepare("INSERT INTO usuario_pet(FK_PET,FK_USUARIO VALUES(:fk_pet,:fk_usuario");
+    $comando = $pdo -> prepare("INSERT INTO usuario_pet(fk_pet,fk_usuario) VALUES(:fk_pet,:fk_usuario);");
 
     session_start();
-    $comando->bindValue(':fk_pet',$pet_id);
-    $comando->bindValue(':fk_usuario',$_SESSION['pk_usuario']);
+
+    $comando->bindValue(':fk_pet',(int)$pet_id);
+    $comando->bindValue(':fk_usuario',(int)$_SESSION['pk_usuario']);
 
     $comando->execute();
     
-    header("Location:/sa_unipet/src/pages/agenda_pet.html");
+    header("Location:/sa_unipet/src/pages/agenda_pet.php");
 
 ?>

@@ -5,37 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agenda</title>
+    <title>Vacinas</title>
     <link rel="stylesheet" href="../css/custom.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 
 <body style="overflow: hidden; width: 100vw;">
-    <div style="position: absolute; width: 100%; height:100%;">
+    <div style="height: 100vh; position: absolute; width: 100%">
         <div class="row h-100">
-             <!-- Coluna da esquerda -->
-             <?php 
-                include('../../backend/verifiy_logged_user.php');
+            <!-- Coluna da esquerda -->
+            <?php 
                 include('_sidebar.php');
-                mainSideBar('agenda'); 
-             ?>
+                mainSideBar('vacinas'); 
+            ?>
             <!-- Coluna da direita -->
-            <div class="col-9 h-100 container mt-4" style="overflow-y: scroll; height: 100vh;">
-                <h1 class="h1 text-center mt-2 font-weight-bold">Agenda</h1>
-                <div class="col mx-3 mt-4">
-                    <div class="row text-center">
-                        <img class="img-fluid" src="../img/calendar.jpg" alt="" width="60%" height="60%">
-                    </div>
-                    <div class="row mb-4 mt-3 text-end">
-                            <div class="col"></div>
-                            <div class="col-4">
-                                <button type="submit" onclick="window.location='agendamento.php'" class="btn btn-primary" style="width: 100%">Agendar consulta</button>
-                            </div>
-                        </div>
-                        <div class="row text-start">
-                            <h3 class="h3">Histórico de consultas</h3>
-                        </div>
+            <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
+                <h1 class="h1 text-center mt-2 font-weight-bold">Vacinas</h1>                    
+                <div class="col-3">
+                    <label class="form-label" for="pet">Selecione um pet</label>
+                    <select class="form-select" id="pet" name="pet">
+                        <option selected disabled value="0">--</option>
+                    </select>
+                </div>
                         <table class="table mt-3">
                                 <thead>
                                   <tr>
@@ -61,6 +52,19 @@
                                   </tr>
                                 </tbody>
                               </table>
+                              <div class="card mb-3 mt-3" style="max-width: 440px;">
+                                    <div class="row g-0">
+                                      <div class="col-md-2">
+                                        <img src="../img/imagem.jpg" class="img-fluid rounded-start" alt="...">
+                                      </div>
+                                      <div class="col-md-8">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Próximas vacinas</h5>
+                                          <p class="card-text">This content is a little bit longer.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
             </div>
         </div>
     </div>

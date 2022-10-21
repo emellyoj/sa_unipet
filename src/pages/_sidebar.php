@@ -6,9 +6,8 @@ function mainSideBar($active) {
         <hr class="hr text-light">
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'pet_shop')     ?  'active' : 'menu_option'; ?>" style="border:none" value="Pet Shop" onclick="window.location='../pages/pet_shop.php'"/></div>
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'agenda')       ?  'active' : 'menu_option'; ?>" style="border:none" value="Agenda"   onclick="window.location='../pages/agenda_pet.php'"/></div>
-        <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'meus_pets')    ?  'active' : 'menu_option'; ?>" style="border:none" value="Meus Pets"/></div>
-        <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'consultas')    ?  'active' : 'menu_option'; ?>" style="border:none" value="Consultas"/></div>
-        <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'vacinas')      ?  'active' : 'menu_option'; ?>" style="border:none" value="Vacinas"/></div>
+        <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'meus_pets')    ?  'active' : 'menu_option'; ?>" style="border:none" value="Meus Pets" onclick="window.location='../pages/meus_pets.php'"/></div>
+        <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'vacinas')      ?  'active' : 'menu_option'; ?>" style="border:none" value="Vacinas" onclick="window.location='../pages/vacinas.php'"/></div>
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'meu_perfil')   ?  'active' : 'menu_option'; ?>" style="border:none" value="Meu Perfil" onclick="window.location='../pages/perfil_usuario.php'"/></div>
     </div>
 <?php
