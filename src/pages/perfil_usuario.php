@@ -12,7 +12,7 @@
     <script src="../js/verInformacoesDoCep.js"></script>
 </head>
 
-<body style="overflow-x: hidden; ">
+<body style="overflow: hidden; ">
     <div style="height: 100%; position: absolute; width: 100%">
         <div class="row h-100">
             <!-- Coluna da esquerda -->

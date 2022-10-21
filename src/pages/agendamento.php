@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 
-<body style="overflow-x: hidden; width: 100vw;">
+<body style="overflow: hidden;">
     <div style="position: absolute; width: 100%; height:100%;">
-        <div class="row">
+        <div class="row h-100">
             <!-- Coluna da esquerda -->
             <?php 
                 include('../../backend/verifiy_logged_user.php');
@@ -23,23 +23,39 @@
             ?>
 
             <!-- Coluna da direita -->
-            <div class="col-9 container mt-4">
+            <div class="col-9 container mt-4" style="overflow-y:scroll; height: 100vh;"> 
                 <h1 class="h1 text-center mt-2 font-weight-bold">Agendar Consulta</h1>
                 <div class="row">
                     <div class="col-12 p-5">
                         <label class="form-label" for="pet">Para qual pet deseja agendar a consulta?</label>
                         <select class="form-select" id="pet">
                             <option selected disabled value="0">--</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php
+                            include("../../backend/select_pets_por_dono.php");
+                            if (!empty($pets)){
+                                foreach($pets as $pet){
+                                    ?>
+                                    <option value="<?php echo $pet['id_pet'];?>"><?php echo $pet['nome_pet'];?></option>
+                                    
+                                    <?php
+                                }
+                            }
+                            ?>
                         </select>
                         <label class="form-label mt-4" for="medico">Qual médico realizará o atendimento?</label>
                         <select class="form-select" id="medico">
                             <option selected value="0">--</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <?php
+                            include("../../backend/select_medicos.php");
+                            if (!empty($todos_medicos)){
+                                foreach($todos_medicos as $medico){
+                                    ?>
+                                    <option value="<?php echo $medico['id_usuario'];?>"><?php echo $medico['nomecompleto_usuario'];?></option>
+                                    
+                                    <?php
+                                }
+                            }
+                            ?>
                         </select>
                         <div class="form-text">Caso não selecione nenhum médico, um médico com agenda disponível
                             realizará o
