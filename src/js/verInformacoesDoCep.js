@@ -5,11 +5,11 @@ function handlerCep() {
     const citySelect = document.querySelector('#cidade');
     const bairroInput = document.querySelector('#bairro');
     const ruaInput = document.querySelector('#rua');
+    const cepInput = document.querySelector('#cep');
 
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
         
         if (httpRequest.status === 200) {
-            // Perfect!
 
             data = JSON.parse(httpRequest.responseText)
 
@@ -20,15 +20,14 @@ function handlerCep() {
             
             bairroInput.value = data['bairro']
             ruaInput.value = data['logradouro']
-            
+            alert(data['cep'])
+            cepInput.value = data['cep']
 
 
 
         } else {
             alert('Erro')
             // There was a problem with the request.
-            // For example, the response may have a 404 (Not Found)
-            // or 500 (Internal Server Error) response code.
         }
     } else {
         // Not ready yet.
