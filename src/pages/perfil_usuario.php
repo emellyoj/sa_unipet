@@ -27,32 +27,33 @@
                 <div class="container mt-2 text-center col">
                     <!-- Formulário de cadastro -->
                     <form class="text-start p-5">
+                        <?php include('../../backend/select_informacoes_usuario.php'); ?>
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="nomecompleto">Nome completo</label>
-                            <input type="text" id="nomecompleto" class="form-control" placeholder="José da Silva">
+                            <input type="text" id="nomecompleto" class="form-control" value="<?php echo $info_usuario['NOMECOMPLETO_USUARIO']; ?>">
                         </div>
 
                         <div class="mt-3 row">
                             <div class="col p-0 pe-2">
                                 <label class="form-label" for="nomeusuario">Nome de usuário</label>
-                                <input type="text" id="nomeusuario" class="form-control" placeholder="josedasilva">
+                                <input type="text" id="nomeusuario" class="form-control" value="<?php echo $info_usuario['USERNAME_USUARIO']; ?>">
                             </div>
                             <div class="col p-0 ps-2">
                                 <label class="form-label" for="telefone">Telefone</label>
-                                <input type="text" id="telefone" class="form-control" placeholder="(00) 00000-0000">
+                                <input type="text" id="telefone" class="form-control" placeholder="(00) 00000-0000" value="<?php echo $info_usuario['TELEFONE_USUARIO']; ?>">
                             </div>
 
                         </div>
 
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="email">E-mail</label>
-                            <input type="text" id="email" class="form-control" placeholder="seunome@exemplo.com">
+                            <input type="text" id="email" class="form-control" placeholder="seunome@exemplo.com" value="<?php echo $info_usuario['EMAIL_USUARIO']; ?>">
                         </div>
 
                         <div class="mt-3 row">
                             <div class="col-5 p-0">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" class="form-control" placeholder="00000-000" onblur="verInformacoesDoCep(this.value)">
+                                <input type="text" id="cep" class="form-control" placeholder="00000-000" onblur="verInformacoesDoCep(this.value)" value="<?php echo $info_usuario['CEP_USUARIO']; ?>">
                             </div>
                         </div>
 
