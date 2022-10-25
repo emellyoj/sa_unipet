@@ -26,44 +26,44 @@
                 <h1 class="h1 text-center mt-2 font-weight-bold">Informações Pessoais</h1>
                 <div class="container mt-2 text-center col">
                     <!-- Formulário de cadastro -->
-                    <form class="text-start p-5">
-                        <?php include('../../backend/select_informacoes_usuario.php'); ?>
+                    <form class="text-start p-5" action="../../backend/update_informacoes_usuario.php" method="POST">
+                        <?php include('../../backend/select_informacoes_usuario.php');?>
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="nomecompleto">Nome completo</label>
-                            <input type="text" id="nomecompleto" class="form-control" value="<?php echo $info_usuario['NOMECOMPLETO_USUARIO']; ?>">
+                            <input type="text" id="nomecompleto" name="nomecompleto" class="form-control" value="<?php echo $info_usuario['NOMECOMPLETO_USUARIO']; ?>">
                         </div>
 
                         <div class="mt-3 row">
                             <div class="col p-0 pe-2">
                                 <label class="form-label" for="nomeusuario">Nome de usuário</label>
-                                <input type="text" id="nomeusuario" class="form-control" value="<?php echo $info_usuario['USERNAME_USUARIO']; ?>">
+                                <input type="text" id="nomeusuario" name="nomeusuario"  class="form-control" value="<?php echo $info_usuario['USERNAME_USUARIO']; ?>">
                             </div>
                             <div class="col p-0 ps-2">
                                 <label class="form-label" for="telefone">Telefone</label>
-                                <input type="text" id="telefone" class="form-control" placeholder="(00) 00000-0000" value="<?php echo $info_usuario['TELEFONE_USUARIO']; ?>">
+                                <input type="text" id="telefone" name="telefone"  class="form-control" placeholder="(00) 00000-0000" value="<?php echo $info_usuario['TELEFONE_USUARIO']; ?>">
                             </div>
 
                         </div>
 
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="email">E-mail</label>
-                            <input type="text" id="email" class="form-control" placeholder="seunome@exemplo.com" value="<?php echo $info_usuario['EMAIL_USUARIO']; ?>">
+                            <input type="text" id="email" name="email" class="form-control" placeholder="seunome@exemplo.com" value="<?php echo $info_usuario['EMAIL_USUARIO']; ?>">
                         </div>
 
                         <div class="mt-3 row">
                             <div class="col-5 p-0">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" class="form-control" placeholder="00000-000" onblur="verInformacoesDoCep(this.value)" value="<?php echo $info_usuario['CEP_USUARIO']; ?>">
+                                <input type="text" id="cep" name="cep" class="form-control" placeholder="00000-000" onblur="verInformacoesDoCep(this.value)" value="<?php echo $info_usuario['CEP_USUARIO']; ?>">
                             </div>
                         </div>
 
                         <div class="mt-3 row">
                             <div class="col-2 p-0 ">
                                 <label class="form-label" for="estado">Estado</label>
-                                <select class="form-select" id="estado" onchange="getCitiesByState(this.value)">
+                                <select class="form-select" id="estado" name="estado" onchange="getCitiesByState(this.value)">
                                     <option selected disabled value="0">--</option>
-                                    <option value="AC">AC</option>
                                     <option value="AL">AL</option>
+                                    <option value="AC">AC</option>
                                     <option value="AP">AP</option>
                                     <option value="AM">AM</option>
                                     <option value="BA">BA</option>
@@ -91,28 +91,34 @@
                                     <option value="TO">TO</option>
                                 </select>
                             </div>
+                            <script> 
+                                document.querySelector('#estado').value="<?php echo $info_usuario['ESTADO_USUARIO']?>"
+                            </script>
                             <div class="col-5 p-0  ps-3 pe-3">
                                 <label class="form-label" for="cidade">Cidade</label>
-                                <select class="form-select" id="cidade">
+                                <select class="form-select" id="cidade" name="cidade">
                                 </select>
                             </div>
+                            <script> 
+                                document.querySelector('#cidade').value="<?php echo $info_usuario['CIDADE_USUARIO']?>"
+                            </script>
                             <div class="col-5 p-0">
                                 <label class="form-label" for="bairro">Bairro</label>
-                                <input type="text" id="bairro" class="form-control">
+                                <input type="text" id="bairro" name="bairro" class="form-control" value="<?php echo $info_usuario['BAIRRO_USUARIO']; ?>">
                             </div>
                         </div>
                         <div class="mt-3 row">
                             <div class="col-5 p-0">
                                 <label class="form-label" for="rua">Rua</label>
-                                <input type="text" id="rua" class="form-control">
+                                <input type="text" id="rua" name="rua" class="form-control" value="<?php echo $info_usuario['RUA_USUARIO']; ?>">
                             </div>
                             <div class="col-2 p-0 ps-3 pe-3">
                                 <label class="form-label" for="numero">Número</label>
-                                <input type="number" id="numero" class="form-control">
+                                <input type="number" id="numero" name="numero" class="form-control" value="<?php echo $info_usuario['NUMEROCASA_USUARIO']; ?>">
                             </div>
                             <div class="col-5 p-0">
                                 <label class="form-label" for="complemento">Complemento <span class="text-secondary" style="font-size: 0.8em">(Opcional)</span></label>
-                                <input type="text" id="complemento" class="form-control">
+                                <input type="text" id="complemento" name="complemento" class="form-control" value="<?php echo $info_usuario['COMPLEMENTOENDERECO_USUARIO']; ?>">
                             </div>
                         </div>
 
