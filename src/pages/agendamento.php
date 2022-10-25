@@ -24,7 +24,7 @@
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y:scroll; height: 100vh;"> 
-                <h1 class="h1 text-center mt-2 font-weight-bold">Agendar Consulta</h1>
+                <h1 class="h1 text-center mt-2 font-weight-bold">Agendar consulta</h1>
                 <div class="row">
                     <div class="col-12 p-5">
                         <label class="form-label" for="pet">Para qual pet deseja agendar a consulta?</label>
