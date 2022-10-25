@@ -20,7 +20,6 @@ function handlerCep() {
             
             bairroInput.value = data['bairro']
             ruaInput.value = data['logradouro']
-            alert(data['cep'])
             cepInput.value = data['cep']
 
 
