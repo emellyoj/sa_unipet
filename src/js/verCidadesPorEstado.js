@@ -17,15 +17,15 @@ function handler() {
             
             Array.from(JSON.parse(httpRequest.responseText)).forEach(element => {
                 cidadeOption = document.createElement('option'); 
+                cidadeOption.setAttribute('value','123'); 
+                
                 cidadeNome = document.createTextNode(element['municipio-nome']); 
-
                 cidadeOption.appendChild(cidadeNome); 
-                cidadeOption.setAttribute('value',cidadeNome); 
 
                 citySelect.appendChild(cidadeOption);
+                cidadeOption = ''
 
             })
-
 
         } else {
             alert('Erro')

@@ -26,7 +26,7 @@
                 <h1 class="h1 text-center mt-2 font-weight-bold">Informações Pessoais</h1>
                 <div class="container mt-2 text-center col">
                     <!-- Formulário de cadastro -->
-                    <form class="text-start p-5" action="../../backend/update_informacoes_usuario.php" method="POST">
+                    <form class="text-start p-5" action="../../backend/update_informacoes_usuario.php" method="POST" id="perfil">
                         <?php include('../../backend/select_informacoes_usuario.php');?>
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="nomecompleto">Nome completo</label>
@@ -60,7 +60,7 @@
                         <div class="mt-3 row">
                             <div class="col-2 p-0 ">
                                 <label class="form-label" for="estado">Estado</label>
-                                <select class="form-select" id="estado" name="estado" onchange="getCitiesByState(this.value)">
+                                <select class="form-select" id="estado" name="estado" onchange="getCitiesByState(this.value)" form="perfil">
                                     <option selected disabled value="0">--</option>
                                     <option value="AL">AL</option>
                                     <option value="AC">AC</option>
@@ -92,16 +92,14 @@
                                 </select>
                             </div>
                             <script> 
-                                document.querySelector('#estado').value="<?php echo $info_usuario['ESTADO_USUARIO']?>"
+                                
                             </script>
                             <div class="col-5 p-0  ps-3 pe-3">
                                 <label class="form-label" for="cidade">Cidade</label>
                                 <select class="form-select" id="cidade" name="cidade">
                                 </select>
                             </div>
-                            <script> 
-                                document.querySelector('#cidade').value="<?php echo $info_usuario['CIDADE_USUARIO']?>"
-                            </script>
+
                             <div class="col-5 p-0">
                                 <label class="form-label" for="bairro">Bairro</label>
                                 <input type="text" id="bairro" name="bairro" class="form-control" value="<?php echo $info_usuario['BAIRRO_USUARIO']; ?>">
@@ -136,7 +134,21 @@
             </div>
         </div>
     </div>
-
+    <script> 
+        async function selectState() {
+            console.log('start selectState');
+            document.querySelector('#estado').value="<?php echo $info_usuario['ESTADO_USUARIO']?>"
+            console.log('end selectState');
+        }
+        async function selectCity() {
+            console.log('start selectCity');
+            await selectState()
+            await getCitiesByState("<?php echo $info_usuario['ESTADO_USUARIO']?>")
+            document.querySelector('#cidade').value="<?php echo $info_usuario['CIDADE_USUARIO']?>"
+            console.log('end selectCity');
+        }
+        selectCity()
+    </script>
 </body>
 
 </html>
