@@ -138,8 +138,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-7">
-                                <label class="form-label" for="dataconsulta">Para qual pet deseja agendar a
-                                    consulta?</label>
+                                <label class="form-label" for="dataconsulta">Selecione uma data para a consulta</label>
                                 <input class="form-control" type="date" name="" id="dataconsulta">
                             </div>
                         </div>
