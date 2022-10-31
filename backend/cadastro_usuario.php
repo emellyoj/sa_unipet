@@ -19,7 +19,7 @@
         $id_usuario = $pdo -> lastInsertId();
 
         session_start();
-        $_SESSION['pk_usuario'] = (int)$resultado['id_usuario'];
+        $_SESSION['pk_usuario'] = $id_usuario;
         $_SESSION['fk_tipousuario'] = 1;
         $_SESSION['loggedin'] = true;
 
