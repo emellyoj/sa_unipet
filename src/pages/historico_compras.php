@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body style="overflow-x: hidden; width: 100vw;">
-    <div style="height: 100vh; position: absolute; width: 100%">
-        <div class="row">
+<body style="overflow:hidden; width: 100vw;">
+    <div style="position: absolute; width: 100%; height:100%;">
+        <div class="row h-100">
             <!-- Coluna da esquerda -->
             <?php
             include('../../backend/verifiy_logged_user.php'); 
