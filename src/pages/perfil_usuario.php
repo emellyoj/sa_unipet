@@ -27,7 +27,7 @@
                 <div class="container mt-2 text-center col">
                     <!-- Formulário de cadastro -->
                     <form class="text-start p-5" action="../../backend/update_informacoes_usuario.php" method="POST" id="perfil">
-                        <?php include('../../backend/select_informacoes_usuario.php'); var_dump($info_usuario)?>
+                        <?php include('../../backend/select_informacoes_usuario.php');?>
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="nomecompleto">Nome completo</label>
                             <input type="text" id="nomecompleto" name="nomecompleto" class="form-control" value="<?php echo $info_usuario['NOMECOMPLETO_USUARIO']; ?>">
