@@ -53,7 +53,7 @@
                         <div class="mt-3 row">
                             <div class="col-5 p-0">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" name="cep" class="form-control" placeholder="00000-000" onblur="verInformacoesDoCep(this.value)" value="<?php echo $info_usuario['CEP_USUARIO']; ?>">
+                                <input type="text" id="cep" name="cep" class="form-control" placeholder="00000-000" onkeyup="verInformacoesDoCep(this.value)" value="<?php echo $info_usuario['CEP_USUARIO']; ?>">
                             </div>
                         </div>
 

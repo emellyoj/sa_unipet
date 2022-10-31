@@ -36,10 +36,15 @@ function handlerCep() {
 
 
 function verInformacoesDoCep(cep) {
-    httpRequest.onreadystatechange = handlerCep;
 
-    httpRequest.open('GET', 'https://viacep.com.br/ws/' + cep + '/json/', false);
-    httpRequest.send();
+    if(cep.replace(/[^0-9]/g, '').length == 8) {
+        httpRequest.onreadystatechange = handlerCep;
+
+        httpRequest.open('GET', 'https://viacep.com.br/ws/' + cep + '/json/', false);
+        httpRequest.send();
+    }
+
+   
 
 
 }
