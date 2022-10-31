@@ -17,7 +17,7 @@ function handler() {
             
             Array.from(JSON.parse(httpRequest.responseText)).forEach(element => {
                 cidadeOption = document.createElement('option'); 
-                cidadeOption.setAttribute('value','123'); 
+                cidadeOption.setAttribute('value',element['municipio-nome']); 
                 
                 cidadeNome = document.createTextNode(element['municipio-nome']); 
                 cidadeOption.appendChild(cidadeNome); 
