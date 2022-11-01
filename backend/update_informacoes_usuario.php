@@ -5,8 +5,8 @@ $comando = $pdo->prepare("UPDATE usuario SET USERNAME_USUARIO=:USERNAME_USUARIO,
 
 
 session_start();
-$comando->bindValue(':USERNAME_USUARIO', $_POST['nomecompleto']);
-$comando->bindValue(':NOMECOMPLETO_USUARIO', $_POST['nomeusuario']);
+$comando->bindValue(':USERNAME_USUARIO', $_POST['nomeusuario']);
+$comando->bindValue(':NOMECOMPLETO_USUARIO', $_POST['nomecompleto']);
 $comando->bindValue(':TELEFONE_USUARIO', $_POST['telefone']);
 $comando->bindValue(':EMAIL_USUARIO', $_POST['email']);
 $comando->bindValue(':CEP_USUARIO', $_POST['cep']);
@@ -37,4 +37,5 @@ $comando->execute();
 unset($comando);
 unset($pdo);
 
+$_SESSION['user_updated'] = true;
 header('location:/sa_unipet/src/pages/perfil_usuario.php');
