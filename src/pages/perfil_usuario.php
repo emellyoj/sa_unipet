@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/sidebar.css">
     <script src="../js/verCidadesPorEstado.js"></script>
     <script src="../js/verInformacoesDoCep.js"></script>
+
 </head>
 
 <body style="overflow: hidden; ">
@@ -18,8 +19,9 @@
             <!-- Coluna da esquerda -->
             <?php 
                 include('_sidebar.php');
-                mainSideBar('meu_perfil'); 
-            ?>
+                mainSideBar('meu_perfil');
+                ?>
+                
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
@@ -120,35 +122,66 @@
                             </div>
                         </div>
 
-
+                        
 
                         <div class="row mt-5 text-end">
-                            <div class="col"></div>
+                            <div class="col" id="alert-wrapper">
+                                <?php 
+                                if (isset($_SESSION['user_updated'])) {
+                                    ?>
+
+                                    <?php
+                                    unset($_SESSION['user_updated']);
+                                    sleep(3);
+                                    $html = preg_replace('#<div id="alert-user-updated">(.*?)</div>#', '', $html);
+                                }
+                                ?>
+                            </div>
                             <div class="col-4 p-0">
                                 <button type="submit" class="btn btn-primary" style="width: 100%">Atualizar</button>
                             </div>
                         </div>
                     </form>
+                    <script> 
+                            async function selectState() {
+                                console.log('start selectState');
+                                document.querySelector('#estado').value="<?php echo $info_usuario['ESTADO_USUARIO']?>"
+                                console.log('end selectState');
+                            }
+                            async function selectCity() {
+                                console.log('start selectCity');
+                                await selectState()
+                                await getCitiesByState("<?php echo $info_usuario['ESTADO_USUARIO']?>")
+                                document.querySelector('#cidade').value="<?php echo $info_usuario['CIDADE_USUARIO']?>"
+                                document.querySelector('#cep').value="<?php echo $info_usuario['CEP_USUARIO'];?>"
+                                document.querySelector('#rua').value="<?php echo $info_usuario['RUA_USUARIO'];?>"
+                                document.querySelector('#bairro').value="<?php echo $info_usuario['BAIRRO_USUARIO'];?>"
+                                console.log('end selectCity');
+                            }
+
+                            async function verifyUpdatedUserAlert(){
+                                await selectCity()
+                                updatedUser = "<?php echo isset($_SESSION['user_updated']) ? "true" : "false"; ?>"
+                                if (updatedUser == 'true') {
+                                    document.querySelector("#alert-wrapper").innerHTML = '<div class="alert alert-success alert-dismissible text-start" role="alert" id="alert-user-updated">Seu cadastro foi atualizado com sucesso!</div>'
+                                    
+                                    await new Promise(r => setTimeout(r, 2000));
+                                    
+                                    document.querySelector("#alert-wrapper").innerHTML = ''
+                                    <?php
+                                    unset($_SESSION['user_updated']);
+                                    ?>
+                                }
+                            }
+
+                            verifyUpdatedUserAlert()
+                        </script>
                 </div>
 
             </div>
         </div>
     </div>
-    <script> 
-        async function selectState() {
-            console.log('start selectState');
-            document.querySelector('#estado').value="<?php echo $info_usuario['ESTADO_USUARIO']?>"
-            console.log('end selectState');
-        }
-        async function selectCity() {
-            console.log('start selectCity');
-            await selectState()
-            await getCitiesByState("<?php echo $info_usuario['ESTADO_USUARIO']?>")
-            document.querySelector('#cidade').value="<?php echo $info_usuario['CIDADE_USUARIO']?>"
-            console.log('end selectCity');
-        }
-        selectCity()
-    </script>
+    
 </body>
 
 </html>
