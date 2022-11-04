@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 
-$comando = $pdo->prepare("SELECT id_usuario, nomecompleto_usuario FROM usuario WHERE fk_tipousuario = 2;");
+$comando = $pdo->prepare("SELECT ID_USUARIO, NOMECOMPLETO_USUARIO FROM USUARIO WHERE FK_TIPOUSUARIO = 2;");
 $comando->execute();
 
 if ($comando->rowCount()>0)

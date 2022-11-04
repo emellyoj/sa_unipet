@@ -9,7 +9,7 @@
     $confirmarsenha = MD5($_POST["confirmarsenha"]);
 
     if ($senha==$confirmarsenha) {
-        $comando = $pdo -> prepare("INSERT INTO usuario (nomecompleto_usuario, username_usuario, email_usuario, senha_usuario) VALUES(:nomecompleto,:username,:email,:senha)");
+        $comando = $pdo -> prepare("INSERT INTO USUARIO (NOMECOMPLETO_USUARIO, USERNAME_USUARIO, EMAIL_USUARIO, SENHA_USUARIO) VALUES(:nomecompleto,:username,:email,:senha)");
         $comando->bindValue(":nomecompleto",$nomecompleto);                                     
         $comando->bindValue(":username",$nomeusuario); 
         $comando->bindValue(":email",$email);                                     
