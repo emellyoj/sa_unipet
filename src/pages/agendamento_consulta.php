@@ -23,7 +23,7 @@
                 mainSideBar('agenda'); 
                 if ($_GET) {
 
-                    $medico = (int)$_GET['medico'];
+                    $medico = $_GET['medico'];
                     $dataconsulta = $_GET['dataconsulta'];
                     echo $medico;
                     echo $dataconsulta;
@@ -80,22 +80,19 @@
                         <div class="col-8 mt-3">
                             <label class="form-label">Qual o horário da consulta?</label>                            
                             <div class="row row-cols-5 g-3">
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">10:40</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">11:00</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">12:00</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">13:00</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">14:20</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">15:00</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">16:00</button></div>
-                                <div class="col"><button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                        onclick="changeSelected(this);">16:20</button></div>
+                                <?php 
+                                    foreach ($horarios_do_medico as $horario) {
+                                        ?>
+                                            <div class="col">
+                                                <button type="button" class="btn btn-outline-primary w-100 escolhahora"
+                                                        onclick="changeSelected(this);">
+                                                        <?php $horario['ID_HORARIO'];?>
+                                                </button>
+                                            </div>
+                                        <?php
+                                    }
+                                ?>
+
                             </div>
                         </div>
                         <div class="row mt-5 text-end">
