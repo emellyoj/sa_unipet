@@ -39,6 +39,11 @@
                     </div>
 
                     <div class="mt-3">
+                        <label class="form-label" for="descricao_produto">Descrição do produto</label>
+                        <textarea name="descricao_produto" id="descricao_produto" cols="30" rows="10" class="form-control" style="rezise: none; height: 10em; width:100%; max-height: 5em; min-height: 5em;"></textarea>
+                    </div>
+
+                    <div class="mt-3">
                         <label class="form-label" for="imagem">Inserir imagem</label>
                         <input type="file" id="imagem" name="imagem" class="form-control" accept="image/*">
                     </div>

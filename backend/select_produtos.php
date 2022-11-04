@@ -12,19 +12,24 @@ if ($comando->rowCount()>0)
             ?>
             <div class="col">
                 <div class="card">
-                    <img src="<?php echo $item["foto_produto"] ?>" style="height:200px;" class="card-img-top" alt="...">
+                    <img src="<?php echo $item["foto_produto"] ?>" style="max-height:200px;" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <span class="row">
+                        <span class="row mt-1">
                             <span class="col">
-                                <h6 class="card-title"><?php echo $item["nome_produto"]; ?></h6>
-                            </span>
-                            <span class="col-4 text-end">
-                                <h6 class="card-title"><?php echo $item["preco_produto"]; ?></h6>
+                                <h6 class="card-title"><strong><?php echo $item["nome_produto"]; ?></strong></h6>
                             </span>
                         </span>
-                        <a href="#" class="btn btn-<?php echo ((int)$item['quant_estoque'] > 0) ? 'primary' : 'secondary' ?>">
-                            <?php echo ((int)$item['quant_estoque'] > 0) ? 'Comprar' : 'Sem estoque' ?>
-                        </a>
+                        <span class="row mx-1 mt-3">
+                            <span class="col-5 d-flex align-items-end justify-content-end p-0">
+                                <h6 class="card-title">R$<?php echo $item["preco_produto"]; ?></h6>
+                            </span>
+                            <span class="col-7 p-0 text-end">
+                                <a href="#" class="ms-2 w-100 btn btn-<?php echo ((int)$item['quant_estoque'] > 0) ? 'primary' : 'secondary' ?>">
+                                    <?php echo ((int)$item['quant_estoque'] > 0) ? 'Comprar' : 'Sem estoque' ?>
+                                </a>
+                            </span>
+                        </span>
+                        
                     </div>
                 </div>
             </div>
