@@ -30,7 +30,7 @@
                     <div class="row mb-4 mt-3 text-end">
                             <div class="col"></div>
                             <div class="col-4">
-                                <button type="submit" onclick="window.location='agendamento.php'" class="btn btn-primary" style="width: 100%">Agendar consulta</button>
+                                <button type="submit" onclick="window.location='agendamento_consulta.php'" class="btn btn-primary" style="width: 100%">Agendar consulta</button>
                             </div>
                         </div>
                         <div class="row text-start">

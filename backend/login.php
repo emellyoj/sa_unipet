@@ -4,7 +4,7 @@ include("conexao.php");
 $entrada = $_POST["entrada"];
 $set_senha = $_POST["senha"];
 
-$comando = $pdo->prepare("SELECT id_usuario, senha_usuario, fk_tipousuario FROM usuario WHERE email_usuario = :entrada or username_usuario = :entrada");
+$comando = $pdo->prepare("SELECT ID_USUARIO, SENHA_USUARIO, FK_TIPOUSUARIO FROM USUARIO WHERE EMAIL_USUARIO = :entrada or USERNAME_USUARIO = :entrada");
 
 $comando->bindValue(":entrada",$entrada);  
 

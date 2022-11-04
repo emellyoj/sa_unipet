@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="overflow: hidden; ">
+<body style="overflow: hidden;" data-userupdated = <?php session_start(); echo (isset($_SESSION['user_updated'])) ? "1" : "0"?>>
     <div style="height: 100%; position: absolute; width: 100%">
         <div class="row h-100">
             <!-- Coluna da esquerda -->
@@ -125,17 +125,7 @@
                         
 
                         <div class="row mt-5 text-end">
-                            <div class="col" id="alert-wrapper">
-                                <?php 
-                                if (isset($_SESSION['user_updated'])) {
-                                    ?>
-
-                                    <?php
-                                    unset($_SESSION['user_updated']);
-                                    sleep(3);
-                                    $html = preg_replace('#<div id="alert-user-updated">(.*?)</div>#', '', $html);
-                                }
-                                ?>
+                            <div class="col p-0" id="alert-wrapper">
                             </div>
                             <div class="col-4 p-0">
                                 <button type="submit" class="btn btn-primary" style="width: 100%">Atualizar</button>
@@ -160,10 +150,9 @@
                             }
 
                             async function verifyUpdatedUserAlert(){
-                                await selectCity()
-                                updatedUser = "<?php echo isset($_SESSION['user_updated']) ? "true" : "false"; ?>"
-                                if (updatedUser == 'true') {
-                                    document.querySelector("#alert-wrapper").innerHTML = '<div class="alert alert-success alert-dismissible text-start" role="alert" id="alert-user-updated">Seu cadastro foi atualizado com sucesso!</div>'
+                                if (document.querySelector('body').getAttribute('data-userupdated') == '1') {
+                                    document.querySelector("#alert-wrapper").innerHTML = '<div class="alert alert-success alert-dismissible text-start me-3" role="alert" id="alert-user-updated">Seu cadastro foi atualizado com sucesso!</div>'
+                                    await selectCity()
                                     
                                     await new Promise(r => setTimeout(r, 2000));
                                     

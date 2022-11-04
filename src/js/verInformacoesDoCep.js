@@ -13,17 +13,20 @@ function handlerCep() {
 
             data = JSON.parse(httpRequest.responseText)
 
-            stateSelect.value = data['uf']
-            getCitiesByState(data['uf'])
+            if (data['erro'] == true) {
+                alert('Digite um CEP Válido')
+                cepInput.value = ''
 
-            citySelect.selectedIndex = Array.from(document.querySelector('#cidade')).findIndex(e => e.innerHTML == data['localidade'])
-            
-            bairroInput.value = data['bairro']
-            ruaInput.value = data['logradouro']
-            cepInput.value = data['cep']
-
-
-
+            } else {
+                stateSelect.value = data['uf']
+                getCitiesByState(data['uf'])
+    
+                citySelect.selectedIndex = Array.from(document.querySelector('#cidade')).findIndex(e => e.innerHTML == data['localidade'])
+                
+                bairroInput.value = data['bairro']
+                ruaInput.value = data['logradouro']
+                cepInput.value = data['cep']
+            }
         } else {
             alert('Erro')
             // There was a problem with the request.

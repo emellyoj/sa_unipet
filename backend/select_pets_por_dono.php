@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 
-$comando = $pdo->prepare("SELECT id_pet,nome_pet FROM usuario_pet INNER JOIN pet ON fk_pet=pet.ID_PET WHERE fk_usuario=:fk_usuario");
+$comando = $pdo->prepare("SELECT ID_PET,NOME_PET FROM USUARIO_PET INNER JOIN PET ON FK_PET=PET.ID_PET WHERE FK_USUARIO=:fk_usuario");
 
 session_start();
 $comando->bindValue(':fk_usuario',$_SESSION['pk_usuario']);
