@@ -5,7 +5,7 @@
     $genero_pet = $_POST["generopet"];
     $raca_pet = $_POST["racapet"];
 
-    $comando = $pdo -> prepare("INSERT INTO pet(nome_pet,genero_pet,raca_pet) VALUES(:nome_pet,:genero_pet,:raca_pet)");
+    $comando = $pdo -> prepare("INSERT INTO PET(NOME_PET,GENERO_PET,RACA_PET) VALUES(:nome_pet,:genero_pet,:raca_pet)");
 
     $comando->bindValue(":nome_pet",$nome_pet);                                     
     $comando->bindValue(":genero_pet",$genero_pet);  
@@ -16,7 +16,7 @@
     $pet_id=$pdo->lastInsertId();
     unset($comando);                           
 
-    $comando = $pdo -> prepare("INSERT INTO usuario_pet(fk_pet,fk_usuario) VALUES(:fk_pet,:fk_usuario);");
+    $comando = $pdo -> prepare("INSERT INTO USUARIO_PET(FK_PET,FK_USUARIO) VALUES(:fk_pet,:fk_usuario);");
 
     session_start();
 

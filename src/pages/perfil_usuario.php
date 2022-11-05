@@ -161,6 +161,7 @@
                                     unset($_SESSION['user_updated']);
                                     ?>
                                 }
+                                await selectCity()
                             }
 
                             verifyUpdatedUserAlert()

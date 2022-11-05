@@ -22,7 +22,7 @@
     
     
 
-    $comando = $pdo -> prepare("INSERT INTO produto(nome_produto,preco_produto,descricao_produto,quant_estoque, disponivel_venda, foto_produto) VALUES(:nome_produto,:preco_produto,:descricao_produto,:quant_estoque,:disponivel,:foto)");
+    $comando = $pdo -> prepare("INSERT INTO PRODUTO(NOME_PRODUTO,PRECO_PRODUTO,DESCRICAO_PRODUTO,QUANT_ESTOQUE, DISPONIVEL_VENDA, FOTO_PRODUTO) VALUES(:nome_produto,:preco_produto,:descricao_produto,:quant_estoque,:disponivel,:foto)");
 
     $comando->bindValue(":nome_produto",$nome);                                     
     $comando->bindValue(":preco_produto",(float)$preco);  
