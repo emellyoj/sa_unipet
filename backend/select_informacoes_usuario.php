@@ -3,7 +3,6 @@ include("conexao.php");
 
 if (isset($info_usuario)){
     unset($info_usuario);
-    echo('ahdaskjdhajlsdjklashdklsakldahskljdhaskdashdaslkjhdkjahsdlkjashdlkjashdlkjashdklh');
 }
 
 $comando = $pdo->prepare("SELECT * FROM USUARIO WHERE ID_USUARIO=:id_usuario");

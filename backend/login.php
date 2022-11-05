@@ -12,12 +12,12 @@ $comando->execute();
 
 if ($comando->rowCount() == 1){
     $resultado = $comando->fetch();
-    if($resultado['senha_usuario'] == MD5($set_senha)){
+    if($resultado['SENHA_USUARIO'] == MD5($set_senha)){
         header("location:/sa_unipet/src/pages/perfil_usuario.php");
 
         session_start();
-        $_SESSION['pk_usuario'] = $resultado['id_usuario'];
-        $_SESSION['fk_tipousuario'] = $resultado['fk_tipousuario'];
+        $_SESSION['pk_usuario'] = $resultado['ID_USUARIO'];
+        $_SESSION['fk_tipousuario'] = $resultado['FK_TIPOUSUARIO'];
         $_SESSION['loggedin'] = true;
 
     }
