@@ -58,7 +58,7 @@
                   ?>
                 </div>
                 <?php
-                if ($informacoes_consulta['STATUS'] == 'Aguardando Atendimento') {
+                if ($informacoes_consulta['STATUS'] == 'Aguardando atendimento') {
                   ?>
                 <div class="modal-footer">
                   <a href="agenda_pet.php?remarcar_consulta=<?php echo $_GET['consulta'] ?>">

@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors",0);
 /*
 SELECT 
     DATE_FORMAT(C.DATA_CONSULTA, '%Y/%m/%d') AS DATA_CONSULTA, 

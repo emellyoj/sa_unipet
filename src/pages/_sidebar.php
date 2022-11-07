@@ -1,4 +1,5 @@
 <?php 
+ini_set("display_errors",0);
 function mainSideBar($active) {
     session_start();
 ?>
@@ -41,7 +42,7 @@ function petshopSideBar($active) {
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'pedidos')    ?  'active' : 'menu_option'; ?>" style="border:none" value="Pedidos"  onclick="window.location='pedidos.php'"/></div>
         
     <?php
-    if ($active == 'pet_shop' and $_SESSION['fk_tipousuario'] == 3) {        
+    if (($active == 'pet_shop' or $active == 'cadastro_produto') and $_SESSION['fk_tipousuario'] == 3) {        
         ?>
         <hr class="hr text-light mb-0">
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'cadastro_produto') ?  'active' : 'menu_option';?>" style="border:none" value="Cadastrar Produto" onclick="window.location='cadastro_produto.php'"/></div>

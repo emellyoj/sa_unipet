@@ -24,9 +24,21 @@ if ($comando->rowCount()>0)
                                 <h6 class="card-title">R$<?php echo $item["PRECO_PRODUTO"]; ?></h6>
                             </span>
                             <span class="col-7 p-0 text-end">
+                            <?php   
+                            if ($_SESSION['fk_tipousuario'] == 3) {        
+                                ?>
+                                <a href="atualizar_produto.php?produto=<?php echo $item["ID_PRODUTO"] ?>" class="ms-2 w-100 btn btn-primary" >
+                                    Editar
+                                </a>
+                            <?php 
+                            } else if ($_SESSION['fk_tipousuario'] == 1) {
+                            ?>
                                 <a href="#" class="ms-2 w-100 btn btn-<?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'primary' : 'secondary' ?>">
                                     <?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'Comprar' : 'Sem estoque' ?>
                                 </a>
+                            <?php
+                            }
+                            ?>
                             </span>
                         </span>
                         

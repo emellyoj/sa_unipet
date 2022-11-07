@@ -71,7 +71,7 @@
                                 ?>
                                 <div class="col-4 d-flex flex-column justify-content-end" style="height:100%">
                                 <?php
-                                    if ($informacoes_consulta['STATUS'] == 'Aguardando Atendimento'){
+                                    if ($informacoes_consulta['STATUS'] == 'Aguardando atendimento'){
                                         ?>
                                             <a href="../../backend/update_status_consulta.php?consulta=<?php echo $_GET['consulta']?>&novo_status=Em_Atendimento" class="btn btn-primary mb-2" style="width: 100%">Iniciar Atendimento</a>
                                         <?php
