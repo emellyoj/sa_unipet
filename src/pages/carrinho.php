@@ -17,7 +17,7 @@
             <?php
             // include('../../backend/verifiy_logged_user.php'); 
             include('_sidebar.php');
-            petshopSideBar('carrinho', true);
+            petshopSideBar('carrinho');
             ?>
 
             <!-- Coluna da direita -->

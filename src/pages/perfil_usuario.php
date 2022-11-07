@@ -32,24 +32,24 @@
                         <?php include('../../backend/select_informacoes_usuario.php');?>
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="nomecompleto">Nome completo</label>
-                            <input type="text" id="nomecompleto" name="nomecompleto" class="form-control" value="<?php echo $info_usuario['NOMECOMPLETO_USUARIO']; ?>">
+                            <input type="text" id="nomecompleto" name="nomecompleto" class="form-control" value="<?php echo $info_usuario['NOMECOMPLETO_USUARIO']; ?>" required>
                         </div>
 
                         <div class="mt-3 row">
                             <div class="col p-0 pe-2">
                                 <label class="form-label" for="nomeusuario">Nome de usuário</label>
-                                <input type="text" id="nomeusuario" name="nomeusuario"  class="form-control" value="<?php echo $info_usuario['USERNAME_USUARIO']; ?>">
+                                <input type="text" id="nomeusuario" name="nomeusuario"  class="form-control" value="<?php echo $info_usuario['USERNAME_USUARIO']; ?>" required>
                             </div>
                             <div class="col p-0 ps-2">
                                 <label class="form-label" for="telefone">Telefone</label>
-                                <input type="text" id="telefone" name="telefone"  class="form-control" placeholder="(00) 00000-0000" value="<?php echo $info_usuario['TELEFONE_USUARIO']; ?>">
+                                <input type="text" id="telefone" name="telefone"  class="form-control" placeholder="(00) 00000-0000" value="<?php echo $info_usuario['TELEFONE_USUARIO']; ?>" >
                             </div>
 
                         </div>
 
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="email">E-mail</label>
-                            <input type="text" id="email" name="email" class="form-control" placeholder="seunome@exemplo.com" value="<?php echo $info_usuario['EMAIL_USUARIO']; ?>">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="seunome@exemplo.com" value="<?php echo $info_usuario['EMAIL_USUARIO']; ?>" required>
                         </div>
 
                         <div class="mt-3 row">
@@ -165,6 +165,38 @@
                             }
 
                             verifyUpdatedUserAlert()
+
+                            document.querySelector('#nomeusuario').addEventListener('keyup', e => {
+                                usernameInput = document.querySelector('#nomeusuario').value
+
+                                // Substituição de caracteres especiais
+                                charMap = {
+                                    'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+                                    'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u',
+                                    'ã': 'a', 'ẽ': 'e', 'ĩ': 'i', 'õ': 'o', 'ũ': 'u',
+                                    'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u',
+                                    'ç': 'c', 'ḉ': 'c'
+                                }
+                                for (const [key, value] of Object.entries(charMap)) {
+                                    pat = new RegExp(key, 'gi')
+                                    usernameInput = usernameInput.replace( pat , value)
+                                }
+
+                                // Remover espaços
+                                console.log(usernameInput);
+                                if ( usernameInput.search( /\s/g ) != -1 )
+                                {
+                                    usernameInput = usernameInput.replace( /\s/g , "" ) ;
+                                }	
+
+                                // Remover caracteres especiais
+                                if ( usernameInput.search( /[^a-z0-9]/i ) != -1 )
+                                {
+                                    usernameInput = usernameInput.replace( /[^a-z0-9]/gi , "" ) ;
+                                }
+
+                                document.querySelector('#nomeusuario').value = usernameInput.toLowerCase();
+                            })
                         </script>
                 </div>
 
@@ -173,5 +205,6 @@
     </div>
     
 </body>
+
 
 </html>
