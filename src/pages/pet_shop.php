@@ -16,7 +16,7 @@
         <!-- Coluna da esquerda -->
             <?php 
                 include('_sidebar.php');
-                petshopSideBar('pet_shop', true);
+                petshopSideBar('pet_shop');
             ?>
 
             <!-- Coluna da direita -->

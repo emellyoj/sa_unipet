@@ -20,7 +20,7 @@
             <?php 
                 include('../../backend/verifiy_logged_user.php');
                 include('_sidebar.php');
-                mainSideBar('agenda'); 
+                mainSideBar('agenda_pet'); 
                 if ($_GET) {
                     $getPet = $_GET['pet'];
                     $getMedico = $_GET['medico'];
@@ -84,7 +84,7 @@
                                 <div class="col-7">
                                     <label class="form-label" for="dataconsulta">Para qual data deseja agendar a consulta?</label>
                                     <input class="form-control" type="date" name="dataconsulta" id="dataconsulta" 
-                                        onchange="criarBotoesHorarios();" 
+                                        onchange="criarBotoesHorarios('consulta');" 
                                         value="<?php echo date($getDataconsulta)?>" required
                                         min="<?php echo date('Y-m-d', strtotime(date('Y-m-d').' + 1 day')); // Não deixa selecionar datas no passado?>"
                                         onkeydown="return false">
@@ -99,7 +99,7 @@
                                             ?>
                                                 <div class="col">
                                                     <button type="button" class="btn btn-outline-primary w-100 escolhahora"
-                                                            onclick="changeSelected(this);">
+                                                            onclick="changeSelected(this, 'consulta');">
                                                             <?php echo $horario['ID_HORARIO'];?>
                                                     </button>
                                                 </div>

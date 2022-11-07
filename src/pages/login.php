@@ -9,6 +9,9 @@
 </head>
 <body style="overflow: hidden; ">
 	<div style="height: 100vh; position: absolute; width: 100%">
+		
+	
+	
 		<div class="row h-100">
 			<!-- Coluna da esquerda -->
 			<div class="col-md-7 com-xs-12 h-100 p-0" style="height: 100vh">
@@ -43,6 +46,8 @@
 							<div class="mt-3 text-end">
 								<a href="cadastro.php" class="text-decoration-none">Ainda não tem uma conta? Cadastre-se</a>
 							</div>
+
+							<div class="row mt-2" id="alert-wrapper"></div>
 						</form>  
 
 					</div>
@@ -53,4 +58,25 @@
   </div>
 
 </body>
+<script>
+	async function showError(){
+		document.querySelector('#alert-wrapper').innerHTML = `<div class='alert alert-danger alert-dismissible text-start me-3' role='alert' id='alert-user-updated'>Usuario ou senha incorreto!</div>`;
+		await new Promise(r => setTimeout(r, 2000));    
+		document.querySelector('#alert-wrapper').innerHTML = '';
+
+	}
+	<?php 
+		session_start();
+
+		if (isset($_SESSION['erro_login']) and $_SESSION['erro_login']) {
+			?> 
+			document.querySelector('#email').value = '<?php echo $_SESSION['info_login']['email'] ?>';
+
+			showError();
+			<?php
+		unset($_SESSION['erro_login']);
+		unset($_SESSION['info_login']);
+		}
+	?>	
+</script>
 </html>

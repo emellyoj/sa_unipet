@@ -10,23 +10,27 @@ $comando->bindValue(":entrada",$entrada);
 
 $comando->execute();
 
+session_start();
 if ($comando->rowCount() == 1){
     $resultado = $comando->fetch();
     if($resultado['SENHA_USUARIO'] == MD5($set_senha)){
         header("location:/sa_unipet/src/pages/perfil_usuario.php");
-
-        session_start();
+        
         $_SESSION['pk_usuario'] = $resultado['ID_USUARIO'];
         $_SESSION['fk_tipousuario'] = $resultado['FK_TIPOUSUARIO'];
         $_SESSION['loggedin'] = true;
-
+        
     }
     else{
-        echo("Email ou senha incorreto!");
+        $_SESSION['erro_login'] = true;
+        $_SESSION['info_login'] = array('email' => $entrada);
+        header("location:/sa_unipet/src/pages/login.php");
     }
 }
 else {
-    echo("Email ou senha incorreto!");
+    $_SESSION['erro_login'] = true;
+    $_SESSION['info_login'] = array('e  mail' => $entrada);
+    header("location:/sa_unipet/src/pages/login.php");
 }
 
 unset($comando);
