@@ -8,8 +8,11 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="../css/custom.min.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <script src="../../md_bootstrap/js/mdb.min.js"> </script>
     <script src="../js/verCidadesPorEstado.js"></script>
     <script src="../js/verInformacoesDoCep.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -25,10 +28,33 @@
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
-                <h1 class="h1 text-center mt-2 font-weight-bold">Informações Pessoais</h1>
+                <h1 class="h1 text-center mt-2 font-weight-bold">Meu perfil</h1>
                 <div class="container mt-2 text-center col">
-                    <!-- Formulário de cadastro -->
-                    <form class="text-start p-5" action="../../backend/update_informacoes_usuario.php" method="POST" id="perfil">
+                <!-- Tabs navs -->
+                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#perfil"
+                    aria-controls="ex-with-icons-tabs-1" aria-selected="true"><i class="fas fa-user-alt fa-fw me-2"></i>Informações pessoais</a>
+                </li>
+                <?php 
+                if ($_SESSION['fk_tipousuario']==1 ) {
+                    ?> 
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#pets"
+                        aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i class="fas fa-paw fa-fw me-2"></i>Pets</a>
+                    </li>
+                    <?php
+                }
+                ?>
+                
+                </ul>
+                <!-- Tabs navs -->
+
+                
+                <div id="myTab-content" class="tab-content">
+                     <!-- Formulário de cadastro -->
+                    <form class="text-start p-5 pt-0 tab-pane fade show active" role="tab-panel" aria-labelledby="myTab-tab-1"
+                          action="../../backend/update_informacoes_usuario.php" method="POST" id="perfil">
                         <?php include('../../backend/select_informacoes_usuario.php');?>
                         <div class="mt-3 row">
                             <label class="form-label p-0" for="nomecompleto">Nome completo</label>
@@ -132,6 +158,18 @@
                             </div>
                         </div>
                     </form>
+                    <?php 
+                        if ($_SESSION['fk_tipousuario']==1 ) {
+                            ?> 
+                            <div id="pets" class="tab-pane fade" role="tabpanel" aria-labelledby="myTab-tab-2">
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    
+                    </div>
+                   
+                    
                     <script> 
                             async function selectState() {
                                 console.log('start selectState');
@@ -196,6 +234,23 @@
                                 }
 
                                 document.querySelector('#nomeusuario').value = usernameInput.toLowerCase();
+                            })
+
+                            const bsTab = new bootstrap.Tab('#myTab')
+
+                            const triggerTabList = [].slice.call(document.querySelectorAll('#myTab a'));
+                            triggerTabList.forEach((triggerEl) => {
+                            const tabTrigger = new mdb.Tab(triggerEl);
+
+                            triggerEl.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                tabTrigger.show();
+                            });
+                            });
+                            const tabEl = document.querySelector('button[data-bs-toggle="tab"]')
+                            tabEl.addEventListener('shown.bs.tab', event => {
+                            event.target // newly activated tab
+                            event.relatedTarget // previous active tab
                             })
                         </script>
                 </div>

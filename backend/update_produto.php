@@ -1,15 +1,31 @@
 <?php
 include("conexao.php");
+if($_FILES['imagem']['name'] != ""){
+    $imagem = $_FILES['imagem'];
+    $extensao = $imagem['type'];
+    $conteudo = file_get_contents($imagem['tmp_name']);
+    $base64 = "data:".$extensao.";base64,".base64_encode($conteudo);
+   
+    $comando = $pdo->prepare("UPDATE PRODUTO SET NOME_PRODUTO=:nome_produto, DESCRICAO_PRODUTO=:descricao_produto, FOTO_PRODUTO=:foto_produto, PRECO_PRODUTO=:preco_produto, QUANT_ESTOQUE=:quant_estoque, DISPONIVEL_VENDA=:disponivel_venda WHERE ID_PRODUTO=:id_produto");
+   
+    $comando->bindValue(':foto_produto',$base64);
+}
+else {
+    
+    $comando = $pdo->prepare("UPDATE PRODUTO SET NOME_PRODUTO=:nome_produto, DESCRICAO_PRODUTO=:descricao_produto, PRECO_PRODUTO=:preco_produto, QUANT_ESTOQUE=:quant_estoque, DISPONIVEL_VENDA=:disponivel_venda WHERE ID_PRODUTO=:id_produto");
+}
 
-$comando = $pdo->prepare("UPDATE PRODUTO SET DATA_CONSULTA=:data_consulta, HORA_CONSULTA=:hora_consulta WHERE ID_CONSULTA=:id_consulta");
 
-$comando->bindValue(':data_consulta', $_POST['dataconsulta']);
-$comando->bindValue(':hora_consulta', $_POST['horarioconsulta']);
-$comando->bindValue(':id_consulta', $_GET['id_consulta']);
+$comando->bindValue(':nome_produto', $_POST['nome']);
+$comando->bindValue(':descricao_produto', $_POST['descricao_produto']);
+$comando->bindValue(':preco_produto', $_POST['preco']);
+$comando->bindValue(':quant_estoque', $_POST['quant_estoque']);
+$comando->bindValue(':disponivel_venda', $_POST['disponivel']);
+$comando->bindValue(':id_produto', $_GET['produto']);
 
 $comando->execute();
 
 unset($comando);
 unset($pdo);
 
-header('location:/sa_unipet/src/pages/agenda_pet.php');
+header('location:/sa_unipet/src/pages/pet_shop.php');

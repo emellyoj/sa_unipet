@@ -24,7 +24,7 @@
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
                 <h1 class="h1 text-center mt-2 font-weight-bold">Atualizar produto</h1>
-                <form class="text-start p-5" method="POST" action="/sa_unipet/backend/cadastro_produto.php" enctype="multipart/form-data">
+                <form class="text-start p-5" method="POST" action="/sa_unipet/backend/update_produto.php?produto=<?php echo ($_GET['produto']);?>" enctype="multipart/form-data">
                     <div>
                         <label class="form-label" for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" class="form-control" value='<?php echo $informacoes_produto["NOME_PRODUTO"] ?>'>
@@ -59,7 +59,7 @@
                     </div>
                     
                     <div class="mt-3 text-end">
-                        <input type="submit" class="btn btn-primary" value="Cadastrar">
+                        <input type="submit" class="btn btn-primary" value="Atualizar">
                     </div>
                 </form>
 

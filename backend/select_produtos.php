@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 
-$comando = $pdo->prepare("SELECT ID_PRODUTO, NOME_PRODUTO, DESCRICAO_PRODUTO, FOTO_PRODUTO, PRECO_PRODUTO, QUANT_ESTOQUE, DISPONIVEL_VENDA FROM PRODUTO  WHERE DISPONIVEL_VENDA = 1");
+$comando = $pdo->prepare("SELECT ID_PRODUTO, NOME_PRODUTO, DESCRICAO_PRODUTO, FOTO_PRODUTO, PRECO_PRODUTO, QUANT_ESTOQUE, DISPONIVEL_VENDA FROM PRODUTO ORDER BY DISPONIVEL_VENDA DESC");
 $comando->execute();
 
 if ($comando->rowCount()>0)
@@ -9,7 +9,8 @@ if ($comando->rowCount()>0)
     $resultado = $comando->fetchAll();
     if (!empty($resultado)){
         foreach($resultado as $item){
-            ?>
+            if ($_SESSION['fk_tipousuario'] == 3 or ($_SESSION['fk_tipousuario'] == 1 and $item['DISPONIVEL_VENDA'] ==1))  {
+                ?>
             <div class="col">
                 <div class="card">
                     <img src="<?php echo $item["FOTO_PRODUTO"] ?>" style="max-height:200px;" class="card-img-top" alt="...">
@@ -27,7 +28,7 @@ if ($comando->rowCount()>0)
                             <?php   
                             if ($_SESSION['fk_tipousuario'] == 3) {        
                                 ?>
-                                <a href="atualizar_produto.php?produto=<?php echo $item["ID_PRODUTO"] ?>" class="ms-2 w-100 btn btn-primary" >
+                                <a href="atualizar_produto.php?produto=<?php echo $item["ID_PRODUTO"] ?>" class="ms-2 w-100 btn btn-<?php echo ($item['DISPONIVEL_VENDA'] ==1) ? 'primary' : 'secondary' ?>" >
                                     Editar
                                 </a>
                             <?php 
@@ -46,6 +47,9 @@ if ($comando->rowCount()>0)
                 </div>
             </div>
             <?php
+            }
+            
+            
         }
     }
 }

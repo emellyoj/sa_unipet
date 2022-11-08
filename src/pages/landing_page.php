@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard de atendimento</title>
+    <title>Landing Page</title>
     <link rel="stylesheet" href="../css/custom.min.css">
     <script src="../js/escolhahora.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,4 +19,5 @@
       <button class="btn btn-primary" type="submit">Entrar</button>
     </form>
   </div>
+  
 </nav>
