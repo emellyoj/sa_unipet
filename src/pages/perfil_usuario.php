@@ -28,7 +28,7 @@
 
             <!-- Coluna da direita -->
             <div class="col-9 container mt-4" style="overflow-y: scroll; height: 100vh;">
-                <h1 class="h1 text-center mt-2 font-weight-bold">Meu perfil</h1>
+                <h1 class="h1 text-center mt-2 font-weight-bold" style="height:6.5vh">Meu perfil</h1>
                 <div class="container mt-2 text-center col">
                 <!-- Tabs navs -->
                 <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
@@ -158,17 +158,124 @@
                             </div>
                         </div>
                     </form>
+                    <!-- TAB PET -->
                     <?php 
                         if ($_SESSION['fk_tipousuario']==1 ) {
                             ?> 
                             <div id="pets" class="tab-pane fade" role="tabpanel" aria-labelledby="myTab-tab-2">
+
+                                <div class="row" style="height:31.5vh">
+                                <?php 
+                                    include("../../backend/select_pets_por_dono.php"); 
+                                    foreach ($pets as $pet) {
+                                        ?>
+                                        <div class="col-2">
+                                            <div class="card">
+                                                <img src="../img/imagem.jpg" style="max-height:170px;" class="card-img-top" alt="...">
+                                                <!-- <img src="<?php echo $pet["FOTO_PET"] ?>" style="max-height:200px;" class="card-img-top" alt="..."> -->
+                                                <div class="card-body">
+                                                    <span class="row mt-1">
+                                                        <span class="col">
+                                                            <h6 class="card-title"><strong><?php echo $pet["NOME_PET"]; ?></strong></h6>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
                             </div>
+                            <div class="col-3 p-0 mt-3">
+                                <button type="submit" class="btn btn-primary" style="width: 100%">Cadastrar pet</button>
+                            </div>
+                            <hr class="hr">
+                            <h3 class="h3 text-start">Histórico de compromissos</h3>
+                            <div class="row" style="height:30vh">
+                                <div class="col-9" style="height:100%; overflow-y:scroll; box-sizing: border-box;">
+                                <table class="table mt-3" >
+                                <thead >
+                                    <tr>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-3 p-0 mt-3 d-flex flex-column justify-content-end">
+                                    <button type="submit" class="btn btn-primary" style="width: 100%">Agendar consulta</button>
+                                </div>
+                            </div>
+                           
                             <?php
                         }
                         ?>
-                    
+                        
                     </div>
-                   
+
                     
                     <script> 
                             async function selectState() {
