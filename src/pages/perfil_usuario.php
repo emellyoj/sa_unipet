@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Perfil</title>
-    <link rel="stylesheet" href="../css/custom.min.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/custom.min.css">
     <script src="../../md_bootstrap/js/mdb.min.js"> </script>
     <script src="../js/verCidadesPorEstado.js"></script>
     <script src="../js/verInformacoesDoCep.js"></script>
@@ -154,7 +154,7 @@
                             <div class="col p-0" id="alert-wrapper">
                             </div>
                             <div class="col-4 p-0">
-                                <button type="submit" class="btn btn-primary" style="width: 100%">Atualizar</button>
+                                <button type="submit" class="btn btn-primary" style="width: 100%" data-mdb-ripple-duration="0">Atualizar</button>
                             </div>
                         </div>
                     </form>
@@ -169,31 +169,40 @@
                                     include("../../backend/select_pets_por_dono.php"); 
                                     foreach ($pets as $pet) {
                                         ?>
-                                        <div class="col-2">
-                                            <div class="card">
-                                                <img src="../img/imagem.jpg" style="max-height:170px;" class="card-img-top" alt="...">
-                                                <!-- <img src="<?php echo $pet["FOTO_PET"] ?>" style="max-height:200px;" class="card-img-top" alt="..."> -->
-                                                <div class="card-body">
-                                                    <span class="row mt-1">
-                                                        <span class="col">
-                                                            <h6 class="card-title"><strong><?php echo $pet["NOME_PET"]; ?></strong></h6>
+                                            
+                                            <div class="col-2">
+                                                <a class="text-decoration-none"href="atualizar_pet.php?pet=<?php echo $pet["ID_PET"] ?>">
+                                                <div class="card">
+                                                    <img src="../img/imagem.jpg" style="max-height:170px;" class="card-img-top" alt="...">
+                                                    <!-- <img src="<?php echo $pet["FOTO_PET"] ?>" style="max-height:200px;" class="card-img-top" alt="..."> -->
+                                                    <div class="card-body">
+                                                        <span class="row mt-1">
+                                                            <span class="col">
+                                                                <h6 class="card-title"><strong><?php echo $pet["NOME_PET"]; ?></strong></h6>
+                                                            </span>
                                                         </span>
-                                                    </span>
+                                                    </div>
                                                 </div>
+                                                </a>
                                             </div>
-                                        </div>
                                         <?php
                                     }
                                     ?>
                             </div>
-                            <div class="col-3 p-0 mt-3">
-                                <button type="submit" class="btn btn-primary" style="width: 100%">Cadastrar pet</button>
+                            
+                            <div class="row mt-3 container">
+                                <div class="col-3 p-0">
+                                    <a class="btn btn-primary text-nowrap" href="cadastro_pet.php" style="width: 100%" data-mdb-ripple-duration="0">Cadastrar pet</a>
+                                </div>
+                                <div class="col-3 p-0 ms-3">
+                                        <a class="btn btn-outline-primary text-nowrap" style="width: 100%" data-mdb-ripple-duration="0">Agendar consulta</a>
+                                    </div>
                             </div>
                             <hr class="hr">
                             <h3 class="h3 text-start">Histórico de compromissos</h3>
                             <div class="row" style="height:30vh">
-                                <div class="col-9" style="height:100%; overflow-y:scroll; box-sizing: border-box;">
-                                <table class="table mt-3" >
+                                <div class="col" style="height:100%; overflow-y:scroll; box-sizing: border-box;">
+                                <table class="table mt-3 w-100" >
                                 <thead >
                                     <tr>
                                     <th scope="col">First</th>
@@ -265,9 +274,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-3 p-0 mt-3 d-flex flex-column justify-content-end">
-                                    <button type="submit" class="btn btn-primary" style="width: 100%">Agendar consulta</button>
-                                </div>
+                                
                             </div>
                            
                             <?php
@@ -359,6 +366,8 @@
                             event.target // newly activated tab
                             event.relatedTarget // previous active tab
                             })
+
+                    
                         </script>
                 </div>
 

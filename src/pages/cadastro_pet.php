@@ -18,7 +18,7 @@
             <?php
             include('../../backend/verifiy_logged_user.php'); 
             include('_sidebar.php');
-            mainSideBar('meus_pets'); 
+            mainSideBar('meu_perfil'); 
             ?>
 
             <!-- Coluna da direita -->

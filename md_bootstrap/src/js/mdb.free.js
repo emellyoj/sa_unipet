@@ -14,7 +14,6 @@ import Toast from './free/toast';
 // MDB FREE COMPONENTS
 import Input from './free/input';
 import Dropdown from './free/dropdown';
-import Ripple from './free/ripple';
 import Range from './free/range';
 
 export {
@@ -27,7 +26,6 @@ export {
   Input,
   Modal,
   Popover,
-  Ripple,
   ScrollSpy,
   Tab,
   Toast,

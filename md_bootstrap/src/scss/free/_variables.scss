@@ -1076,29 +1076,7 @@ $buttons-outline: map-merge(
 );
 // scss-docs-end buttons-outline-colors-map
 
-// Ripple
 
-// scss-docs-start ripple-variables
-$ripple-wave-cubicBezier: cubic-bezier(0, 0, 0.15, 1) !default;
-$ripple-wave-border-radius: 50% !default;
-$ripple-wave-opacity: 0.5 !default;
-$ripple-wave-transform: scale(0) !default;
-$ripple-wave-z-index: 999 !default;
-$ripple-wave-active-transform: scale(1) !default;
-// scss-docs-end ripple-variables
-
-// scss-docs-start ripple-colors-map
-$ripple: (
-  'primary': $primary,
-  'secondary': #e3ebf7,
-  'success': $success,
-  'danger': $danger,
-  'warning': $warning,
-  'info': $info,
-  'light': $light,
-  'dark': $dark,
-) !default;
-// scss-docs-end ripple-colors-map
 
 // Button group
 //
