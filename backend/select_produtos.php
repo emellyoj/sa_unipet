@@ -24,7 +24,7 @@ if ($comando->rowCount()>0)
                             <span class="col-5 d-flex align-items-end justify-content-end p-0">
                                 <h6 class="card-title">R$<?php echo $item["PRECO_PRODUTO"]; ?></h6>
                             </span>
-                            <span class="col-7 p-0 text-end">
+                            <span class="col-7 p-0 text-end text-nowrap">
                             <?php   
                             if ($_SESSION['fk_tipousuario'] == 3) {        
                                 ?>
@@ -35,7 +35,7 @@ if ($comando->rowCount()>0)
                             } else if ($_SESSION['fk_tipousuario'] == 1) {
                             ?>
                                 <a href="#" class="ms-2 w-100 btn btn-<?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'primary' : 'secondary' ?>">
-                                    <?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'Comprar' : 'Sem estoque' ?>
+                                    <?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'Comprar' : 'Indisponível' ?>
                                 </a>
                             <?php
                             }
