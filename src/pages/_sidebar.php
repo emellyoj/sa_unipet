@@ -38,7 +38,7 @@ function petshopSideBar($active) {
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start menu_option                                                         " style="border:none" value="Voltar" onclick="window.location='perfil_usuario.php'"/></div>
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'pet_shop')   ?  'active' : 'menu_option'; ?>" style="border:none" value="Loja"     onclick="window.location='pet_shop.php'"/></div>
         <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'carrinho')   ?  'active' : 'menu_option'; ?>" style="border:none" value="Carrinho" onclick="window.location='carrinho.php'"/></div>
-        <div><inp6ut type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'pedidos')    ?  'active' : 'menu_option'; ?>" style="border:none" value="Pedidos"  onclick="window.location='pedidos.php'"/></div>
+        <div><input type="button" class="btn btn-outline-light w-100 mt-2 text-start <?php echo ($active == 'pedidos')    ?  'active' : 'menu_option'; ?>" style="border:none" value="Pedidos"  onclick="window.location='pedidos.php'"/></div>
         
     <?php
     if (($active == 'pet_shop' or $active == 'cadastro_produto') and $_SESSION['fk_tipousuario'] == 3) {        

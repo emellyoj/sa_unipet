@@ -10,7 +10,7 @@
 
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden;width: 100vw;">
     <div style="height: 100%; position: absolute; width: 100%">
            
         <div class="row h-100">
@@ -24,7 +24,7 @@
             ?>
 
             <!-- Coluna da direita -->
-            <div class="col-lg-9 col-md-12 h-100">
+            <div class="col-lg-9 col-md-12 h-100" style="overflow-y: scroll">
                 <div class="container mt-2 text-center col">
                     <form action="/sa_unipet/backend/update_pet.php?id_pet=<?php echo $_GET['pet']?>" method="POST" enctype="multipart/form-data">
                         
@@ -36,9 +36,9 @@
                         <div class="mt-3 text-start">
                         <label class="form-label" for="imagem">Foto do pet</label>
                         <br>
-                        <img src="<?php echo $informacoes_pet["FOTO_PET"] ?>" alt="" class="img-fluid" width=25%>
+                        <img src="<?php echo $informacoes_pet["FOTO_PET"] ?>" alt="" class="img-fluid" width=25% id="change">
                         <br>
-                        <input type="file" id="imagem" name="imagem" class="form-control mt-2" accept="image/*" value="<?php echo $informacoes_pet["FOTO_PET"] ?>" >
+                        <input type="file" id="imagem" name="imagem" class="form-control mt-2" accept="image/*" value="<?php echo $informacoes_pet["FOTO_PET"] ?>" onchange="changeImage(this);">
                     </div>
                         <div class="container row mt-4 text-start">
                             <label for="generopet" class="form-label p-0">Gênero</label>
@@ -69,5 +69,22 @@
     </div>
 
 </body>
+
+<script>
+    function changeImage(input){
+        let reader = new FileReader();
+
+        newImage = input.files[0]
+
+
+        reader.onloadend = function() {
+            document.querySelector('#change').src = reader.result 
+        }
+        reader.readAsDataURL(newImage);
+    }
+
+
+
+</script>
 
 </html>

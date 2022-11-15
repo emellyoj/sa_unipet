@@ -49,8 +49,8 @@
 
                     <div class="mt-3">
                         <label class="form-label" for="imagem">Imagem</label><br>
-                        <img src="<?php echo $informacoes_produto["FOTO_PRODUTO"]?>" alt="" class="img-fluid" width=25%>
-                        <input type="file" id="imagem" name="imagem" class="form-control" accept="image/*" value='<?php echo $informacoes_produto["FOTO_PRODUTO"] ?>'>
+                        <img src="<?php echo $informacoes_produto["FOTO_PRODUTO"]?>" alt="" class="img-fluid" width=25% id="change">
+                        <input type="file" id="imagem" name="imagem" class="form-control" accept="image/*" value='<?php echo $informacoes_produto["FOTO_PRODUTO"] ?>' onchange="changeImage(this);">
                     </div>
                     
                     <div class="mt-3">
@@ -67,5 +67,20 @@
             </div>
 
 </body>
+<script>
+    function changeImage(input){
+        let reader = new FileReader();
 
+        newImage = input.files[0]
+
+
+        reader.onloadend = function() {
+            document.querySelector('#change').src = reader.result 
+        }
+        reader.readAsDataURL(newImage);
+    }
+
+
+
+</script>
 </html>
