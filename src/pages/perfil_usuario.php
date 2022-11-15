@@ -173,8 +173,7 @@
                                             <div class="col-2">
                                                 <a class="text-decoration-none"href="atualizar_pet.php?pet=<?php echo $pet["ID_PET"] ?>">
                                                 <div class="card">
-                                                    <img src="../img/imagem.jpg" style="max-height:170px;" class="card-img-top" alt="...">
-                                                    <!-- <img src="<?php echo $pet["FOTO_PET"] ?>" style="max-height:200px;" class="card-img-top" alt="..."> -->
+                                                    <img src="<?php echo $pet["FOTO_PET"] ?>" style="max-height:200px;" class="card-img-top" alt="...">
                                                     <div class="card-body">
                                                         <span class="row mt-1">
                                                             <span class="col">
