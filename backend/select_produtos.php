@@ -13,7 +13,7 @@ if ($comando->rowCount()>0)
                 ?>
             <div class="col">
                 <div class="card">
-                    <img src="<?php echo $item["FOTO_PRODUTO"] ?>" style="max-height:200px;" class="card-img-top" alt="...">
+                    <img src="<?php echo $item["FOTO_PRODUTO"] ?>" style="max-height:250px; height:250px;   " class="card-img-top" alt="...">
                     <div class="card-body">
                         <span class="row mt-1">
                             <span class="col">
