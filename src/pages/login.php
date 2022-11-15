@@ -15,7 +15,7 @@
 		<div class="row h-100">
 			<!-- Coluna da esquerda -->
 			<div class="col-md-7 com-xs-12 h-100 p-0" style="height: 100vh">
-				<img class="img-fluid" src="../img/imagem.jpg" style="width: 100%">
+				<img class="img-fluid" src="../img/img_login.png" style="width: 100%">
 			</div>
 
 			<!-- Coluna da direita -->
@@ -24,8 +24,6 @@
 
 					<!-- Conteúdo da coluna da direita -->
 					<div class="col p-5">
-						<!-- Logo (Inserir futuramente) -->
-						<img class="img-fluid" src="../img/imagem.jpg" alt="" width="100px" height="90px">
 
 						<!-- Formulário de login -->
 						<form action="../../backend/login.php" method="POST" class="text-start">
