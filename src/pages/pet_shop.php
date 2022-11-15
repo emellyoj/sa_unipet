@@ -25,7 +25,7 @@
                 <div class="p-5">
 
 
-                    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4">
+                    <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-3">
                         <?php
                         include('../../backend/select_produtos.php')
                      ?>
