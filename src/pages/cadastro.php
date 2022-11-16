@@ -14,7 +14,7 @@
 		<div class="row h-100">
 			<!-- Coluna da esquerda -->
 			<div class="col-md-7 col-sm-12 h-100" style="height: 100vh">
-				<img class="img-fluid" src="../img/imagem.jpg" style="width: 100%; height: 100%" alt="">
+				<img src="../img/img_cadastro.png" style="width: 100%; height: 100%" alt="">
 			</div>
 
 			<!-- Coluna da direita -->

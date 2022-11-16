@@ -1,8 +1,19 @@
 <?php
 include("conexao.php");
 
-$comando = $pdo->prepare("UPDATE PET SET NOME_PET=:nome_pet, GENERO_PET=:genero_pet, RACA_PET=:raca_pet WHERE ID_PET=:id_pet");
 
+if($_FILES['imagem']['name'] != ""){
+    $imagem = $_FILES['imagem'];
+    $extensao = $imagem['type'];
+    $conteudo = file_get_contents($imagem['tmp_name']);
+    $base64 = "data:".$extensao.";base64,".base64_encode($conteudo);
+    $comando = $pdo->prepare("UPDATE PET SET NOME_PET=:nome_pet, GENERO_PET=:genero_pet, RACA_PET=:raca_pet, FOTO_PET=:foto_pet WHERE ID_PET=:id_pet");
+    $comando->bindValue(':foto_pet',$base64);
+}
+else{
+    $comando = $pdo->prepare("UPDATE PET SET NOME_PET=:nome_pet, GENERO_PET=:genero_pet, RACA_PET=:raca_pet  WHERE ID_PET=:id_pet");
+
+}
 
 $comando->bindValue(':nome_pet', $_POST['nomepet']);
 $comando->bindValue(':genero_pet', $_POST['generopet']);

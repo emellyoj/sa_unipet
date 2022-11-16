@@ -10,7 +10,7 @@
 
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden;width: 100vw;">
     <div style="height: 100%; position: absolute; width: 100%">
            
         <div class="row h-100">
@@ -24,54 +24,22 @@
             ?>
 
             <!-- Coluna da direita -->
-            <div class="col-lg-9 col-md-12 h-100">
+            <div class="col-lg-9 col-md-12 h-100" style="overflow-y: scroll">
                 <div class="container mt-2 text-center col">
-                    <form action="/sa_unipet/backend/update_pet.php?id_pet=<?php echo $_GET['pet']?>" method="POST">
-                        <div class="row">
-                            <div class="col">
-                                <div class="bg-secondary" style="width: 100%; height: 20em"></div>
-                            </div>
-                            <div class="col text-start">
-                                <label for="">Donos(as)</label>
-                                <table class="table" style="user-select: none">
-                                    <tbody>
-                                        <tr>
-                                            <td><img class="rounded-circle" src="../img/imagem.jpg" alt="" width="20px"
-                                                    height="20px"></td>
-                                            <td>Otto</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle" src="../img/imagem.jpg" alt="" width="20px"
-                                                    height="20px"></td>
-                                            <td>Thornton</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="rounded-circle" src="../img/imagem.jpg" alt="" width="20px"
-                                                    height="20px"></td>
-                                            <td>Larry the Bird</td>
-                                            <td>X</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="row p-0 text-end">
-                                    <div class="col"></div>
-                                    <div class="col-5">
-                                        <button type="button" class="btn btn-primary">
-                                            Adicionar dono
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
+                    <form action="/sa_unipet/backend/update_pet.php?id_pet=<?php echo $_GET['pet']?>" method="POST" enctype="multipart/form-data">
+                        
                         <div class="container row mt-4 text-start">
                             <label for="nomepet" class="form-label p-0">Nome do pet</label>
                             <input type="text" class="form-control" id="nomepet" name="nomepet" value="<?php echo $informacoes_pet["NOME_PET"] ?>">
 
                         </div>
+                        <div class="mt-3 text-start">
+                        <label class="form-label" for="imagem">Foto do pet</label>
+                        <br>
+                        <img src="<?php echo $informacoes_pet["FOTO_PET"] ?>" alt="" class="img-fluid" width=25% id="change">
+                        <br>
+                        <input type="file" id="imagem" name="imagem" class="form-control mt-2" accept="image/*" value="<?php echo $informacoes_pet["FOTO_PET"] ?>" onchange="changeImage(this);">
+                    </div>
                         <div class="container row mt-4 text-start">
                             <label for="generopet" class="form-label p-0">Gênero</label>
                             <select class="form-select" id="generopet" name="generopet">
@@ -88,7 +56,7 @@
                         <div class="row mt-5 text-end">
                             <div class="col"></div>
                             <div class="col-3 m-4 me-0">
-                                <button type="button" onclick="ConfirmDelete()" class="btn btn-danger" style="width: 100%">Deletar</button>
+                                <button type="button" onclick="ConfirmDelete()" class="btn btn-danger" style="width: 100%">Remover</button>
                             </div>
                             <div class="col-3 m-4 ms-1">
                                 <input type="submit" class="btn btn-primary" style="width: 100%" value="Atualizar">
@@ -108,6 +76,20 @@ function ConfirmDelete() {
         window.location.href="../../backend/delete_pet.php?pet=<?php echo $_GET['pet']; ?>"
     }
 }
+    function changeImage(input){
+        let reader = new FileReader();
+
+        newImage = input.files[0]
+
+
+        reader.onloadend = function() {
+            document.querySelector('#change').src = reader.result 
+        }
+        reader.readAsDataURL(newImage);
+    }
+
+
+
 </script>
 
 </html>
