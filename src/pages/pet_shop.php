@@ -82,11 +82,7 @@
                                                     <input type="number" class="form-control" name="quantidade" id="quantidade" value="1"
                                                     min="1" max="<?php echo $informacoesproduto['QUANT_ESTOQUE']; ?>">
                                                 </div>
-                                                <!-- Esse campo de texto fica escondido
-                                                Sua função é armazenar o preço do produto
-                                                Dentro de um input para ser acessado na variavel $_POST -->
-                                                <input type="number" id="precoproduto" name="precoproduto" 
-                                                style="display:none" value="<?php echo $informacoesproduto['PRECO_PRODUTO']; ?> " required>
+
                                                 <div class="col-3">
                                                     <input type="submit" class="btn btn-primary" value="Adicionar">
                                                 </div>
