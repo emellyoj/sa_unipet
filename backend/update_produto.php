@@ -1,4 +1,5 @@
 <?php
+
 include("conexao.php");
 if($_FILES['imagem']['name'] != ""){
     $imagem = $_FILES['imagem'];
@@ -20,7 +21,14 @@ $comando->bindValue(':nome_produto', $_POST['nome']);
 $comando->bindValue(':descricao_produto', $_POST['descricao_produto']);
 $comando->bindValue(':preco_produto', $_POST['preco']);
 $comando->bindValue(':quant_estoque', $_POST['quant_estoque']);
-$comando->bindValue(':disponivel_venda', $_POST['disponivel']);
+
+if (isset($_POST['disponivel'])){
+    $comando->bindValue(':disponivel_venda', $_POST['disponivel']);
+}
+else {
+    $comando->bindValue(':disponivel_venda', 0);
+}
+
 $comando->bindValue(':id_produto', $_GET['produto']);
 
 $comando->execute();
