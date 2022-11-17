@@ -85,7 +85,7 @@
                             </div>
 
                             <div class="col-8 mt-3">
-                                <label class="form-label">Qual o horário da consulta?</label>                            
+                                <label class="form-label">Qual o horário da vacinação?</label>                            
                                 <div class="row row-cols-5 g-3">
                                     <?php 
                                         foreach ($horarios_do_medico as $horario) {

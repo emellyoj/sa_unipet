@@ -77,7 +77,7 @@
                                 ?>
                                 <div class="col-4 d-flex flex-column justify-content-end" style="height:100%">
                                 <?php
-                                    if ($informacoes_vacinacao['STATUS'] == 'Aguardando Aplicação'){
+                                    if ($informacoes_vacinacao['STATUS'] == 'Aguardando aplicação'){
                                         ?>
                                             <a href="../../backend/update_status_vacinacao.php?vacinacao=<?php echo $_GET['vacinacao']?>&novo_status=Aplicada" class="btn btn-primary mb-2" style="width: 100%">Finalizar Aplicação</a>
                                         <?php

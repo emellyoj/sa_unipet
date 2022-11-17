@@ -53,6 +53,9 @@
                         
                         <h5 class="h5 mt-3 mb-0""><strong>Hora:</strong></h5>
                         <h6 class="h6"><?php echo $informacoes_consulta['HORA_CONSULTA']; ?></h6>
+
+                        <h5 class="h5 mt-3 mb-0""><strong>Situação:</strong></h5>
+                        <h6 class="h6"><?php echo $informacoes_consulta['STATUS']; ?></h6>
                         
                     </div>
                 </div>
@@ -71,7 +74,7 @@
                                 ?>
                                 <div class="col-4 d-flex flex-column justify-content-end" style="height:100%">
                                 <?php
-                                    if ($informacoes_consulta['STATUS'] == 'Aguardando atendimento'){
+                                    if ($informacoes_consulta['STATUS'] == 'Aguardando Atendimento'){
                                         ?>
                                             <a href="../../backend/update_status_consulta.php?consulta=<?php echo $_GET['consulta']?>&novo_status=Em_Atendimento" class="btn btn-primary mb-2" style="width: 100%">Iniciar Atendimento</a>
                                         <?php

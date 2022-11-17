@@ -57,41 +57,29 @@
                                     </div>
                                 </div>
                                 <div class="row mt-4">
-                                <p class="text-dark">
-                                    <span class="fw-bold pe-1">
-                                        Quantidade em estoque: 
-                                    </span>
-                                    <?php echo $informacoesproduto['QUANT_ESTOQUE']; ?>
-                                </p>
                                 </div>
-                                <?php
-                                if ($informacoesproduto['QUANT_ESTOQUE'] > 0) {
-                                ?>
-                                    <form action="../../backend/add_no_carrinho.php?id_produto=<?php echo $_GET['produto'] ?>" method="post" >
-                                        <div class="modal-footer w-100">
-                                            <div class="row justify-content-start w-100 ">
-                                                <div class="col-3 ps-0 d-flex align-items-center">
-                                                    <span class="text-dark">
-                                                        R$ <span class="text-dark" id="preco"> 
-                                                            <?php echo $informacoesproduto['PRECO_PRODUTO'];?>
-                                                        </span>
+                                <form action="../../backend/add_no_carrinho.php?id_produto=<?php echo $_GET['produto'] ?>" method="post" >
+                                    <div class="modal-footer w-100">
+                                        <div class="row justify-content-start w-100 ">
+                                            <div class="col-3 ps-0 d-flex align-items-center">
+                                                <span class="text-dark">
+                                                    R$ <span class="text-dark" id="preco"> 
+                                                        <?php echo $informacoesproduto['PRECO_PRODUTO'];?>
                                                     </span>
-                                                </div>
-                                                <div class="col-3"></div>
-                                                <div class="col-3">
-                                                    <input type="number" class="form-control" name="quantidade" id="quantidade" value="1"
-                                                    min="1" max="<?php echo $informacoesproduto['QUANT_ESTOQUE']; ?>">
-                                                </div>
+                                                </span>
+                                            </div>
+                                            <div class="col-3"></div>
+                                            <div class="col-3">
+                                                <input type="number" class="form-control" name="quantidade" id="quantidade" value="1"
+                                                min="1">
+                                            </div>
 
-                                                <div class="col-3">
-                                                    <input type="submit" class="btn btn-primary" value="Adicionar">
-                                                </div>
+                                            <div class="col-3">
+                                                <input type="submit" class="btn btn-primary" value="Adicionar">
                                             </div>
                                         </div>
-                                    </form>
-                                <?php
-                                }
-                                ?>
+                                    </div>
+                                </form>
                                 <?php
                             }
                             else {
