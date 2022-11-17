@@ -17,7 +17,7 @@ if ($comando->rowCount()>0){
     $itens_carrinho = $comando->fetchAll(PDO::FETCH_ASSOC);
     unset($comando);
 
-    $comando = $pdo->prepare("SELECT SUM(SUBTOTAL) FROM CARRINHO C INNER JOIN PRODUTO P ON P.ID_PRODUTO = C.FK_CARRINHO_PRODUTO WHERE C.FK_CARRINHO_USUARIO = ? AND C.FK_CARRINHO_COMPRA IS NULL;");
+    $comando = $pdo->prepare("SELECT SUM(SUBTOTAL) AS TOTAL FROM CARRINHO C INNER JOIN PRODUTO P ON P.ID_PRODUTO = C.FK_CARRINHO_PRODUTO WHERE C.FK_CARRINHO_USUARIO = ? AND C.FK_CARRINHO_COMPRA IS NULL;");
     $comando->execute([$_SESSION['pk_usuario']]);
     $total_compra = $comando->fetch();
 

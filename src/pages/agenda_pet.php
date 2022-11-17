@@ -109,7 +109,7 @@
 
                   <label class="form-label" for="dataconsulta">Para qual data deseja remarcar a consulta?</label>
                   <input class="form-control" type="date" name="dataconsulta" id="dataconsulta" 
-                                        onchange="criarSelectHorarios(<?php echo $_GET['remarcar_consulta']; ?>, 'consulta)" 
+                                        onchange="criarSelectHorarios(<?php echo $_GET['remarcar_consulta']; ?>, 'consulta')" 
                                         value="<?php echo date('Y-m-d', strtotime(date($data_consulta)))?>" required
                                         min="<?php echo date('Y-m-d', strtotime(date('Y-m-d').' + 1 day')); // Não deixa selecionar datas no passado?>"
                                         onkeydown="return false">

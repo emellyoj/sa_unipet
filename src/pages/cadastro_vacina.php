@@ -16,7 +16,7 @@
             <!-- Coluna da esquerda -->
             <?php 
                 include('_sidebar.php');
-                petshopSideBar('cadastro_vacina.php'); 
+                mainSideBar('vacinas'); 
             ?>
 
             <!-- Coluna da direita -->

@@ -197,7 +197,7 @@ INSERT INTO HORARIO(ID_HORARIO) VALUES
 ('17:00:00');
 
 INSERT INTO `USUARIO` (`USERNAME_USUARIO`, `NOMECOMPLETO_USUARIO`, `TELEFONE_USUARIO`, `EMAIL_USUARIO`, `SENHA_USUARIO`, `CEP_USUARIO`, `ESTADO_USUARIO`, `CIDADE_USUARIO`, `BAIRRO_USUARIO`, `RUA_USUARIO`, `NUMEROCASA_USUARIO`, `COMPLEMENTOENDERECO_USUARIO`, `FK_TIPOUSUARIO`) VALUES
-('lucas', 'Lucas Kroeger', '(47) 98910-8415', 'lucaskroeger202@gmail.com', '202cb962ac59075b964b07152d234b70', '89210-006', 'SC', 'Joinville', 'Itaum', 'Rua Alfredo de Oliveira', '377', 'f2w2s2', 1),
+('lucas', 'Lucas Kroeger', '(47) 98910-8415', 'lucaskroeger202@gmail.com', '202cb962ac59075b964b07152d234b70', '', '', '', '', '', '', '', 1),
 ('emelly', 'Emelly Joaquim', NULL, 'emellyoj@gmail.com', '202cb962ac59075b964b07152d234b70', '89210-006', 'SC', 'Joinville', 'Itaum', 'Rua Alfredo de Oliveira', '377', 'f2w2s2', 1),
 ('admin', 'Admin', NULL, 'admin@gmail.com', 'b09c600fddc573f117449b3723f23d64', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3),
 ('micheltelo', 'dr. Michel Teló', NULL, 'telo@gmail.com', 'c2ac882d9b484a61ef5fc755a144a632', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
