@@ -42,7 +42,7 @@
                         <h5 class="h5 mt-3 mb-0"><strong>Nome do pet:</strong></h5>
                         <h6 class="h6"><?php echo $informacoes_consulta['NOME_PET']; ?></h6>
                         
-                        <h5 class="h5 mt-3 mb-0""><strong>Nome do acompanhante:</strong></h5>
+                        <h5 class="h5 mt-3 mb-0"><strong>Nome do acompanhante:</strong></h5>
                         <h6 class="h6"><?php echo $informacoes_consulta['ACOMPANHANTE']; ?></h6>
                     </div>
                     <div class="col">
@@ -74,7 +74,7 @@
                                 ?>
                                 <div class="col-4 d-flex flex-column justify-content-end" style="height:100%">
                                 <?php
-                                    if ($informacoes_consulta['STATUS'] == 'Aguardando Atendimento'){
+                                    if ($informacoes_consulta['STATUS'] == 'Aguardando atendimento'){
                                         ?>
                                             <a href="../../backend/update_status_consulta.php?consulta=<?php echo $_GET['consulta']?>&novo_status=Em_Atendimento" class="btn btn-primary mb-2" style="width: 100%">Iniciar Atendimento</a>
                                         <?php

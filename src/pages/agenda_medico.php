@@ -40,13 +40,13 @@
       <div class="row text-center" style="height: 100%">
         <div id='calendar' style="height: 100%"></div>
       </div>
-  </section>
-  </div>  
-  <div class="mt-1 text-end me-4">
+    </div>  
+    <div class="mt-1 text-end me-4">
       <input class="form-check-input" id="ocultarfinalizados" name="ocultarfinalizados" type="checkbox" onclick="filterCalendar(this.checked)"
       <?php echo (isset($_GET['filter']) and $_GET['filter'] == 1) ? "checked": "" ;?>>
       <label for="ocultarfinalizados"class="form-label ms-1" style="user-select:none">Ocultar atendimentos finalizados</label>
-  </div>
+    </div>
+  </section>
 </body>
 <script src="../../calendar/js/jquery-3.3.1.min.js"></script>
 <script src="../../calendar/js/popper.min.js"></script>

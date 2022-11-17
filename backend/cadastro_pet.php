@@ -35,6 +35,6 @@
 
     $comando->execute();
     
-    header("Location:/sa_unipet/src/pages/agenda_pet.php");
+    header("Location:/sa_unipet/src/pages/perfil_usuario.php");
 
 ?>

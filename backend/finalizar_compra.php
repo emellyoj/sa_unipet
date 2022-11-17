@@ -5,7 +5,7 @@
 
     $comando = $pdo->prepare("INSERT INTO COMPRA(TOTAL_COMPRA, FK_COMPRA_USUARIO) VALUES(:total_compra,:fk_compra_usuario)");
 
-    $comando->bindValue(":total_compra",(float)$total_compra['SUM(SUBTOTAL)']);                                     
+    $comando->bindValue(":total_compra",(float)$total_compra['TOTAL']);                                     
     $comando->bindValue(":fk_compra_usuario",$_SESSION['pk_usuario']);   
     $comando->execute();     
     $id_compra = $pdo->lastInsertId();

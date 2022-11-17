@@ -194,88 +194,10 @@
                                     <a class="btn btn-primary text-nowrap" href="cadastro_pet.php" style="width: 100%" data-mdb-ripple-duration="0">Cadastrar pet</a>
                                 </div>
                                 <div class="col-3 p-0 ms-3">
-                                        <a class="btn btn-outline-primary text-nowrap" style="width: 100%" data-mdb-ripple-duration="0">Agendar consulta</a>
+                                        <a href="agendamento_consulta.php" class="btn btn-outline-primary text-nowrap" style="width: 100%" data-mdb-ripple-duration="0">Agendar consulta</a>
                                     </div>
                             </div>
-                            <hr class="hr">
-                            <h3 class="h3 text-start">Histórico de compromissos</h3>
-                            <div class="row" style="height:30vh">
-                                <div class="col" style="height:100%; overflow-y:scroll; box-sizing: border-box;">
-                                <table class="table mt-3 w-100" >
-                                <thead >
-                                    <tr>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                            </div>
-                           
+                            <hr class="hr">      
                             <?php
                         }
                         ?>
