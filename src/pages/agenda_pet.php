@@ -181,7 +181,7 @@
                   ?>
                 </div>
                 <?php
-                if ($informacoes_vacinacao['STATUS'] == 'Aguardando Aplicação') {
+                if ($informacoes_vacinacao['STATUS'] == 'Aguardando aplicação') {
                   ?>
                 <div class="modal-footer">
                   <a href="agenda_pet.php?remarcar_vacinacao=<?php echo $_GET['vacinacao'] ?>">

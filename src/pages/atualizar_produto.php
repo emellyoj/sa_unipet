@@ -36,11 +36,6 @@
                     </div>
 
                     <div class="mt-3">
-                        <label class="form-label" for="quant_estoque">Quantidade em estoque</label>
-                        <input type="number" min="0" id="quant_estoque" name="quant_estoque" class="form-control" value='<?php echo $informacoes_produto["QUANT_ESTOQUE"] ?>'>
-                    </div>
-
-                    <div class="mt-3">
                         <label class="form-label" for="descricao_produto">Descrição do produto</label>
                         <textarea name="descricao_produto" id="descricao_produto" cols="30" rows="10" class="form-control" style="rezise: none; height: 10em; width:100%; max-height: 5em; min-height: 5em;">
 <?php echo $informacoes_produto["DESCRICAO_PRODUTO"] ?>

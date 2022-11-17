@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 
-$comando = $pdo->prepare("SELECT ID_PRODUTO, NOME_PRODUTO, DESCRICAO_PRODUTO, FOTO_PRODUTO, PRECO_PRODUTO, QUANT_ESTOQUE, DISPONIVEL_VENDA FROM PRODUTO ORDER BY DISPONIVEL_VENDA DESC");
+$comando = $pdo->prepare("SELECT ID_PRODUTO, NOME_PRODUTO, DESCRICAO_PRODUTO, FOTO_PRODUTO, PRECO_PRODUTO, DISPONIVEL_VENDA FROM PRODUTO ORDER BY DISPONIVEL_VENDA DESC");
 $comando->execute();
 
 if ($comando->rowCount()>0)
@@ -34,8 +34,8 @@ if ($comando->rowCount()>0)
                             <?php 
                             } else if ($_SESSION['fk_tipousuario'] == 1) {
                             ?>
-                                <a href="pet_shop.php?produto=<?php echo $item["ID_PRODUTO"] ?>" class="ms-2 w-100 btn btn-<?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'primary' : 'secondary' ?>">
-                                    <?php echo ((int)$item['QUANT_ESTOQUE'] > 0) ? 'Comprar' : 'Sem estoque' ?>
+                                <a href="pet_shop.php?produto=<?php echo $item["ID_PRODUTO"] ?>" class="ms-2 w-100 btn btn-primary">
+                                    Comprar                                
                                 </a>
                             <?php
                             }

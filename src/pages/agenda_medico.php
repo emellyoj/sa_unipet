@@ -35,48 +35,18 @@
             <!-- Coluna da direita -->
             <div class="col-9 h-100 container" style="overflow-y: scroll; height: 100vh;">
   <section style="height: 90vh;">
-    <h1 class="h1 text-center mt-2 font-weight-bold">Agenda</h1>
-    <div class="col mx-3 mt-4" style="height: 90%">
-        <div class="row text-center" style="height: 100%">
-          <div id='calendar' style="height: 100%"></div>
-        </div>
+  <h1 class="h1 text-center mt-2 font-weight-bold">Agenda</h1>
+  <div class="col mx-3 mt-4" style="height: 90%">
+      <div class="row text-center" style="height: 100%">
+        <div id='calendar' style="height: 100%"></div>
+      </div>
   </section>
+  </div>  
   <div class="mt-1 text-end me-4">
       <input class="form-check-input" id="ocultarfinalizados" name="ocultarfinalizados" type="checkbox" onclick="filterCalendar(this.checked)"
       <?php echo (isset($_GET['filter']) and $_GET['filter'] == 1) ? "checked": "" ;?>>
       <label for="ocultarfinalizados"class="form-label ms-1" style="user-select:none">Ocultar atendimentos finalizados</label>
   </div>
-        <div class="row text-start" >
-          <h3 class="h3">Histórico de consultas</h3>
-        </div>
-        <table class="table mt-3">
-          <thead>
-            <tr>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-    </div>
 </body>
 <script src="../../calendar/js/jquery-3.3.1.min.js"></script>
 <script src="../../calendar/js/popper.min.js"></script>
